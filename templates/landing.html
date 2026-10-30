@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block title %}MediAssist – Evidence-Based Medical AI & Health Education{% endblock %}
+
+{% block content %}
+<!-- ===== HERO SECTION ===== -->
+<section class="landing-hero" id="hero">
+  <div class="landing-badge">
+    <span class="landing-badge-dot"></span>
+    <span>🛡️ Evidence-Grounded Healthcare AI Platform • Powered by Gemini AI</span>
+  </div>
+
+  <h1 class="landing-title">
+    Verified Medical Guidance & Health Education <span>Powered by AI</span>
+  </h1>
+
+  <p class="landing-lead">
+    MediAssist translates complex medical terminology into clear language, provides educational insights grounded in peer-reviewed clinical documents, and strictly enforces emergency boundaries.
+  </p>
+
+  <div class="landing-cta-group">
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('chat.chat_view') }}" class="btn btn-primary btn-lg" id="heroChatBtn">
+        💬 Open Consultation Workspace
+      </a>
+    {% else %}
+      <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg" id="heroGetStartedBtn">
+        Get Started — Create Free Account
+      </a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-secondary btn-lg" id="heroSignInBtn">
+        Sign In to MediAssist
+      </a>
+    {% endif %}
+  </div>
+
+  <!-- Interactive Hero Clinical Preview Card -->
+  <div class="hero-preview" role="region" aria-label="Interactive Consultation Preview">
+    <div class="hero-preview__header">
+      <div class="hero-preview__dots">
+        <span class="hero-preview__dot"></span>
+        <span class="hero-preview__dot"></span>
+        <span class="hero-preview__dot"></span>
+      </div>
+      <div class="hero-preview__status">
+        <span style="color: var(--color-success); font-size: 0.85rem;">●</span>
+        <span>Active Clinical Vector Engine (179 Chunks)</span>
+      </div>
+    </div>
+    <div class="hero-preview__body">
+      <!-- User Query Turn -->
+      <div class="preview-msg preview-msg--user">
+        <div class="preview-msg__avatar">👤</div>
+        <div class="preview-msg__bubble">
+          <strong>User:</strong> Could you explain systolic vs diastolic blood pressure readings, and what evidence-based lifestyle changes help maintain optimal cardiovascular health?
+        </div>
+      </div>
+      <!-- AI Grounded Response Turn -->
+      <div class="preview-msg preview-msg--ai">
+        <div class="preview-msg__avatar">⚕️</div>
+        <div class="preview-msg__bubble">
+          <strong>MediAssist:</strong>
+          <p style="margin: 0.25rem 0 0.5rem 0;">
+            <strong>Blood pressure</strong> consists of two distinct hydrostatic measurements:
+          </p>
+          <ul style="margin: 0 0 0.5rem 1.25rem; padding: 0;">
+            <li><strong>Systolic Pressure (Top Number):</strong> Pressure exerted in arterial walls during myocardial ventricular contraction (peak arterial pressure). Target: &lt; 120 mm Hg.</li>
+            <li><strong>Diastolic Pressure (Bottom Number):</strong> Resting vascular resistance when the heart relaxes between contractions. Target: &lt; 80 mm Hg.</li>
+          </ul>
+          <p style="margin: 0 0 0.5rem 0;">
+            <strong>Evidence-Based Modifications:</strong> Adopt a DASH dietary pattern rich in potassium and magnesium, limit sodium intake (&lt; 2,300 mg/day), and maintain 150 minutes of moderate aerobic exercise weekly.
+          </p>
+          <div>
+            <span class="preview-citation-badge">🔗 [MedlinePlus: High Blood Pressure #014]</span>
+            <span class="preview-citation-badge" style="background: var(--color-secondary-light); color: var(--color-secondary);">🛡️ Non-Emergency Guidance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST METRICS STRIP ===== -->
+<section class="trust-strip" aria-label="Platform Highlights and Credibility">
+  <div class="trust-strip__grid">
+    <div>
+      <div class="trust-item__num">100%</div>
+      <div class="trust-item__label">Verified Passage Citations</div>
+    </div>
+    <div>
+      <div class="trust-item__num">&lt; 150ms</div>
+      <div class="trust-item__label">Deterministic Safety Triage</div>
+    </div>
+    <div>
+      <div class="trust-item__num">179+</div>
+      <div class="trust-item__label">Authoritative Medical Chunks</div>
+    </div>
+    <div>
+      <div class="trust-item__num">Zero</div>
+      <div class="trust-item__label">Fabricated Clinical References</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section class="features-section" id="features">
+  <div class="section-header">
+    <span class="section-tag">Platform Capabilities</span>
+    <h2 class="section-title">Built with Clinical Precision & Strict Safety</h2>
+    <p class="section-subtitle">
+      MediAssist combines Google Gemini with retrieval-augmented generation (RAG) and deterministic safety guardrails.
+    </p>
+  </div>
+
+  <div class="features-grid">
+    <!-- Card 1 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper">📚</div>
+      <h3 class="feature-title">Authoritative Knowledge Base</h3>
+      <p class="feature-desc">
+        Grounded in verified public health sources from the National Library of Medicine (MedlinePlus), CDC, and WHO. No hallucinations or unverified blogs.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper" style="background: var(--color-danger-light); color: var(--color-danger);">🚨</div>
+      <h3 class="feature-title">Deterministic Red-Flag Triage</h3>
+      <p class="feature-desc">
+        Acute red flags (chest pain, stroke signs, severe dyspnea) are intercepted immediately by deterministic rule engines prior to AI generation, providing urgent guidance.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper" style="background: var(--color-primary-light); color: var(--color-primary);">🔒</div>
+      <h3 class="feature-title">Multi-Tenant User Isolation</h3>
+      <p class="feature-desc">
+        Personal consultation records are strictly isolated by authenticated account in SQLAlchemy database models. Transcripts are never leaked across users.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper" style="background: var(--color-secondary-light); color: var(--color-secondary);">🔗</div>
+      <h3 class="feature-title">Audit-Verified Citations</h3>
+      <p class="feature-desc">
+        Every educational statement links back to exact passage IDs. If evidence is insufficient, MediAssist safely abstains rather than inventing medical claims.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper" style="background: var(--color-warning-light); color: var(--color-warning);">🧬</div>
+      <h3 class="feature-title">Adaptive Explanations</h3>
+      <p class="feature-desc">
+        Choose between patient-friendly clear explanations or deep clinical pathophysiology tailored for medical students and clinicians.
+      </p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="feature-card">
+      <div class="feature-icon-wrapper" style="background: var(--color-info-light); color: var(--color-info);">📄</div>
+      <h3 class="feature-title">Medical Document Ingestion</h3>
+      <p class="feature-desc">
+        Securely attach lab test panels, discharge summaries, or clinical guidelines for private contextual analysis with malware validation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS SECTION ===== -->
+<section class="how-it-works-section" id="how-it-works">
+  <div class="how-it-works-container">
+    <div class="section-header">
+      <span class="section-tag">Workflow</span>
+      <h2 class="section-title">How MediAssist Works</h2>
+      <p class="section-subtitle">
+        A seamless three-step clinical consultation and learning journey designed for trust and clarity.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Inquire or Upload</h3>
+        <p class="step-desc">
+          Ask a health question in natural language, inquire about confusing medical terminology, or attach lab reports for review.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Hybrid Retrieval & Safety</h3>
+        <p class="step-desc">
+          MediAssist indexes your query against clinical documents using hybrid vector retrieval while deterministic filters evaluate emergency criteria.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Evidence-Grounded Insight</h3>
+        <p class="step-desc">
+          Receive a textbook-structured educational response formatted with headings, tables, callout pearls, and verified passage citations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST & SAFETY SECTION ===== -->
+<section class="safety-section" id="safety">
+  <div class="section-header">
+    <span class="section-tag">Clinical Governance</span>
+    <h2 class="section-title">Safety, Privacy & Clinical Boundaries</h2>
+    <p class="section-subtitle">
+      Healthcare requires rigorous ethics. MediAssist is architected around foundational clinical guardrails.
+    </p>
+  </div>
+
+  <div class="safety-grid">
+    <div class="safety-card">
+      <div class="safety-card__header">
+        <span class="safety-badge-icon">🩺</span>
+        <h3 class="safety-card__title">Non-Diagnostic Boundary</h3>
+      </div>
+      <p class="safety-card__desc">
+        MediAssist provides educational translation and literature synthesis. It explicitly never diagnoses conditions or prescribes medications.
+      </p>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-card__header">
+        <span class="safety-badge-icon">🚑</span>
+        <h3 class="safety-card__title">Emergency Protocols</h3>
+      </div>
+      <p class="safety-card__desc">
+        Severe symptoms immediately trigger prominent emergency notices directing users to seek licensed medical attention or emergency hotlines.
+      </p>
+    </div>
+
+    <div class="safety-card">
+      <div class="safety-card__header">
+        <span class="safety-badge-icon">🔐</span>
+        <h3 class="safety-card__title">Confidential & Isolated</h3>
+      </div>
+      <p class="safety-card__desc">
+        All sessions are cryptographically signed, CSRF-protected, and rate-limited. Consultations are stored strictly within the user's isolated account.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDICAL DISCLAIMER BANNER ===== -->
+<div class="disclaimer-banner" id="disclaimer" role="complementary" aria-label="Medical Disclaimer">
+  <div class="disclaimer-icon">⚕️</div>
+  <div>
+    <strong>Clinical Notice & Legal Disclaimer:</strong> MediAssist provides verified health education and medical terminology translation only. It is <em>not</em> an authorized medical device and cannot replace personal in-person clinical judgment by a licensed physician or specialist. <strong>If you or someone around you is experiencing chest tightness, severe bleeding, sudden paralysis, or an acute medical crisis, call 911, 112, or 999 immediately.</strong>
+  </div>
+</div>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="landing-hero" id="contact" style="padding-top: 0; padding-bottom: 5rem;">
+  <div class="section-header" style="margin-bottom: 2rem;">
+    <span class="section-tag">Contact & Academic Collaboration</span>
+    <h2 class="section-title">Ready to Experience MediAssist?</h2>
+    <p class="section-subtitle">
+      Create a free account or sign in to explore evidence-based medical consultations with verified RAG citations.
+    </p>
+  </div>
+  <div class="landing-cta-group">
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('chat.chat_view') }}" class="btn btn-primary btn-lg">
+        💬 Open Consultation Workspace
+      </a>
+    {% else %}
+      <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">
+        Create Your Free Account
+      </a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-secondary btn-lg">
+        Sign In to Existing Account
+      </a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

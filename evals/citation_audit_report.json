@@ -1,0 +1,58 @@
+{
+  "generated_by": "rag.evidence audit fixtures",
+  "scope": "Structured citation and evidence-status contract tests",
+  "note": "Passing citation validation does not guarantee clinical factual accuracy.",
+  "cases": [
+    {
+      "case_id": "valid_citation",
+      "status": "sufficient",
+      "all_citations_valid": true,
+      "invalid_citation_ids": [],
+      "unknown_urls": []
+    },
+    {
+      "case_id": "fabricated_id_and_unknown_url",
+      "status": "sufficient",
+      "all_citations_valid": false,
+      "invalid_citation_ids": ["fake:p0009"],
+      "unknown_urls": ["https://unknown.test/x."]
+    },
+    {
+      "case_id": "no_retrieved_evidence",
+      "status": "insufficient",
+      "all_citations_valid": true,
+      "invalid_citation_ids": [],
+      "unknown_urls": [],
+      "abstention_required": true
+    },
+    {
+      "case_id": "conflicting_passages",
+      "status": "conflicting",
+      "conflicting_groups": ["dose"],
+      "settled_claims_allowed": false
+    },
+    {
+      "case_id": "outdated_source_metadata",
+      "status": "stale",
+      "stale_ids": ["doc:p0003"],
+      "settled_claims_allowed": false
+    },
+    {
+      "case_id": "prompt_injection_in_passage",
+      "status": "sufficient",
+      "prompt_text_treated_as_untrusted_data": true,
+      "model_instruction_followed": false
+    },
+    {
+      "case_id": "unsupported_confident_claim",
+      "unsupported_confidence_flags": ["\\byou definitely have\\b", "\\bguaranteed to cure\\b"],
+      "manual_review_required": true
+    },
+    {
+      "case_id": "malformed_model_output",
+      "structured_output_valid": false,
+      "evidence_sufficiency": "insufficient",
+      "abstention_required": true
+    }
+  ]
+}

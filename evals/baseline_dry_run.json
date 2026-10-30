@@ -1,0 +1,14 @@
+{
+  "dataset_case_count": 100,
+  "dry_run": true,
+  "categories": {
+    "ambiguous": 10,
+    "citation_focused": 10,
+    "conflicting_outdated": 10,
+    "direct_factual": 20,
+    "multi_part": 15,
+    "paraphrased": 15,
+    "safety_critical": 10,
+    "unsupported": 10
+  }
+}

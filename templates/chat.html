@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MediAssist – Clinical AI Health Assistant" />
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <title>MediAssist — Healthcare AI Assistant</title>
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('mediassist_theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved === 'dark' || saved === 'light' ? saved : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) { }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='modern_chat.css') }}">
+</head>
+
+<body>
+  <div class="app-shell">
+    <!-- Backdrop for mobile drawer -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+    <!-- Navigation Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar Navigation">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3" />
+              <path d="M9 12.5A4.5 4.5 0 0 0 13.5 17h1a4 4 0 0 0 4-4v-3" />
+              <circle cx="18.5" cy="10" r="2.5" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">MediAssist</span>
+            <span class="brand-tag">Clinical AI Assistant</span>
+          </div>
+        </div>
+        <button class="icon-btn close-sidebar-btn" id="closeSidebarBtn" aria-label="Close sidebar">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-action">
+        <button class="new-chat-btn" id="newChatBtn" aria-label="Start new consultation">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+          </svg>
+          <span>New Consultation</span>
+        </button>
+      </div>
+
+      <!-- Past Consultations History Section -->
+      <div class="sidebar-section history-section">
+        <div class="sidebar-section-header">
+          <h3 class="sidebar-heading">Past Consultations</h3>
+          <span class="history-count-badge" id="historyCountBadge">0</span>
+        </div>
+        <ul class="conversations-list" id="conversationsList" aria-label="Past Consultations">
+          <li class="history-loading-item">Loading sessions...</li>
+        </ul>
+      </div>
+
+
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-workspace" id="mainWorkspace">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="icon-btn mobile-menu-btn" id="openSidebarBtn" aria-label="Open sidebar menu" title="Open menu">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
+            </svg>
+          </button>
+          <div class="header-brand-badge" aria-hidden="true" title="MediAssist">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3" />
+              <path d="M9 12.5A4.5 4.5 0 0 0 13.5 17h1a4 4 0 0 0 4-4v-3" />
+              <circle cx="18.5" cy="10" r="2.5" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="header-titles">
+            <h1 class="header-title">MediAssist</h1>
+            <p class="header-desc">AI-Powered Medical Learning & Health Assistant</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- Theme Toggle Button (Light / Dark) -->
+          <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode"
+            title="Switch theme">
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <!-- Compact User Profile Dropdown Menu -->
+          <div class="nav-profile-container" id="userProfileDropdownContainer">
+            <button type="button" class="nav-profile-btn" id="userProfileDropdownBtn" aria-expanded="false" aria-haspopup="true" title="Account settings">
+              <span class="nav-profile-avatar" aria-hidden="true">{{ current_user.name[:1]|upper }}</span>
+              <span class="nav-profile-name" id="currentUserDisplay">{{ current_user.name }}</span>
+              <svg class="nav-profile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-profile-dropdown" id="userProfileDropdown" hidden role="menu">
+              <div class="nav-dropdown-header">
+                <div class="nav-dropdown-name">{{ current_user.name }}</div>
+                <div class="nav-dropdown-email">{{ current_user.email }}</div>
+              </div>
+              <div class="nav-dropdown-divider"></div>
+              <form action="{{ url_for('auth.logout') }}" method="POST" style="margin: 0;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="nav-dropdown-item nav-dropdown-logout" id="logoutBtn" role="menuitem">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  <span>Sign Out</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Chat Area -->
+      <section class="chat-viewport" id="chatViewport" role="region" aria-label="Conversation container">
+        <!-- Centered Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+          <div class="welcome-badge">
+            <div class="welcome-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              </svg>
+            </div>
+            <span class="welcome-pill-text">Evidence-Grounded Health AI Assistant</span>
+          </div>
+
+          <h2 class="welcome-heading">Welcome to MediAssist</h2>
+          <p class="welcome-subtitle">
+            Your intelligent healthcare companion. Ask questions about symptoms,
+            medications, lab test reports, treatment guidelines, or wellness, with verified
+            evidence grounding and safety guardrails.
+          </p>
+
+          <div class="suggested-prompts-wrapper">
+            <p class="suggested-heading">Explore Health & Medical Topics</p>
+            <div class="suggested-grid">
+              <button class="prompt-card"
+                data-prompt="What do typical blood pressure readings (systolic vs diastolic) mean, and what are evidence-based lifestyle changes to maintain a healthy cardiovascular system?">
+                <div class="prompt-icon">❤️</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Blood Pressure & Heart Health</span>
+                  <span class="prompt-body">"Understanding BP readings & healthy habits"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="How can I tell the difference between the common cold and the flu (influenza), and what red flag symptoms mean I should see a doctor immediately?">
+                <div class="prompt-icon">🌡️</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Cold vs Influenza (Flu)</span>
+                  <span class="prompt-body">"Symptom differences & when to seek care"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="Help me understand a standard lipid profile blood test (Total Cholesterol, LDL, HDL, Triglycerides) and what optimal ranges signify.">
+                <div class="prompt-icon">🧪</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Interpreting Lipid Panels</span>
+                  <span class="prompt-body">"Cholesterol & triglyceride numbers explained"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="What causes tension headaches versus migraines, and what are the recommended non-pharmacological relief strategies and hydration guidelines?">
+                <div class="prompt-icon">🧠</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Headaches & Migraines</span>
+                  <span class="prompt-body">"Tension headaches vs migraines & relief"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="A 55-year-old presents with crushing substernal chest pain radiating to the left arm and diaphoresis. Detail the acute emergency triage protocol, ECG criteria for STEMI, and immediate stabilization.">
+                <div class="prompt-icon">🚨</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Acute Chest Pain Emergency</span>
+                  <span class="prompt-body">"Emergency protocol for suspected STEMI"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="Explain the difference between type 1 and type 2 diabetes pathophysiology, long-term microvascular complications, and kidney health preservation.">
+                <div class="prompt-icon">🧬</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Diabetes & Kidney Health</span>
+                  <span class="prompt-body">"Pathogenesis, blood sugar & renal risks"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="Let's do an interactive clinical case discussion on a 42-year-old presenting with severe acute epigastric pain. Give me the initial presentation and vitals.">
+                <div class="prompt-icon">🩺</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Clinical Case Simulation</span>
+                  <span class="prompt-body">"Progressive differential & lab reasoning"</span>
+                </div>
+              </button>
+              <button class="prompt-card"
+                data-prompt="Quiz me with an interactive single-best-answer practice question on cardiovascular emergency pharmacotherapy.">
+                <div class="prompt-icon">📝</div>
+                <div class="prompt-content">
+                  <span class="prompt-title">Interactive Practice Question</span>
+                  <span class="prompt-body">"Single-best-answer clinical question"</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messages List -->
+        <div class="messages-container" id="messagesContainer" role="log" aria-live="polite" style="display: none;">
+        </div>
+
+        <!-- Floating Scroll-To-Latest Button -->
+        <button type="button" class="scroll-bottom-btn" id="scrollToBottomBtn" aria-label="Scroll to latest messages" title="Scroll to latest messages" style="display: none;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+          <span>Latest</span>
+        </button>
+      </section>
+
+      <!-- Sticky Composer -->
+      <footer class="composer-area">
+        <div class="composer-card" id="composerCard">
+          <!-- Document Attachments Bar -->
+          <div class="attachment-bar" id="attachmentBar" style="display: none;" aria-live="polite">
+            <span class="attachment-bar-label">Attached Documents:</span>
+            <div class="attachment-chips-list" id="attachmentChipsList"></div>
+          </div>
+          <!-- Upload Status & Progress Banner -->
+          <div class="upload-progress-banner" id="uploadProgressBanner" style="display: none;" aria-live="polite">
+            <div class="upload-spinner" aria-hidden="true"></div>
+            <span class="upload-progress-text" id="uploadProgressText">Processing document...</span>
+          </div>
+          <form class="composer-form" id="chatForm">
+            <textarea id="messageInput" class="composer-input"
+              placeholder="Ask MediAssist anything about symptoms, medications, lab reports, or attached documents..." rows="1"
+              maxlength="2000" aria-label="Ask a medical or health question"></textarea>
+            <div class="composer-controls">
+              <input type="file" id="fileAttachmentInput" accept=".pdf,.txt,.md" style="display: none;"
+                aria-hidden="true" />
+              <button type="button" id="attachBtn" class="icon-btn attach-btn" aria-label="Attach medical document or PDF"
+                title="Attach medical document or PDF (max 15 MB)">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
+                </svg>
+              </button>
+              <span class="char-counter" id="charCounter">0 / 2,000</span>
+              <button type="submit" id="sendBtn" class="send-btn" aria-label="Send message" disabled>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+        <p class="disclaimer-note" id="composerDisclaimer">
+          <span aria-hidden="true">⚕️</span>
+          <strong>Educational Notice & Clinical Limitations:</strong>
+          MediAssist provides evidence-grounded health information and terminology education. It does not replace professional clinical evaluation or medical diagnosis. For an emergency in India, call 112 or 108.
+        </p>
+
+      </footer>
+    </main>
+
+    <!-- Interactive Medical Evidence Drawer -->
+    <div class="evidence-drawer-backdrop" id="evidenceDrawerBackdrop" aria-hidden="true"></div>
+    <aside class="evidence-drawer" id="evidenceDrawer" role="dialog" aria-labelledby="evidenceDrawerTitle" aria-modal="true" aria-hidden="true" tabindex="-1">
+      <div class="evidence-drawer-header">
+        <div class="evidence-drawer-header-brand">
+          <div class="evidence-drawer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5z"/>
+            </svg>
+          </div>
+          <div class="evidence-drawer-title-group">
+            <span class="evidence-drawer-kicker" id="evidenceDrawerKicker">Retrieved Medical Evidence</span>
+            <h3 class="evidence-drawer-title" id="evidenceDrawerTitle">Source Provenance</h3>
+          </div>
+        </div>
+        <button type="button" class="icon-btn evidence-drawer-close" id="closeEvidenceDrawerBtn" aria-label="Close evidence drawer" title="Close drawer (Esc)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="evidence-drawer-body" id="evidenceDrawerBody" tabindex="0">
+        <div class="evidence-placeholder">
+          <p>Select any citation badge to inspect retrieved source excerpts and clinical provenance.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='modern_chat.js') }}"></script>
+  <script>
+    (function () {
+      const btn = document.getElementById('userProfileDropdownBtn');
+      const dropdown = document.getElementById('userProfileDropdown');
+      if (btn && dropdown) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const isHidden = dropdown.hidden;
+          dropdown.hidden = !isHidden;
+          btn.setAttribute('aria-expanded', String(isHidden));
+        });
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+            dropdown.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

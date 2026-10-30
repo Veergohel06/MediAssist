@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Flask
+instance/
+.flaskenv
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+*.env
+.neon
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Frontend / Node
+node_modules/
+frontend/dist/
+.vite/
+
+# Caches & Embeddings
+knowledge/*_cache.json
+knowledge/response_cache.json
+knowledge/embedding_cache.json
+knowledge/query_embedding_cache.json

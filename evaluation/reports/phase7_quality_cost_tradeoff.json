@@ -1,0 +1,72 @@
+{
+  "phase": "7",
+  "experiment_version": "phase7-v1",
+  "dataset": "evals/baseline_eval.json",
+  "case_count": 100,
+  "measurements_are_production_or_previous_phase_artifacts": true,
+  "configurations": [
+    {
+      "id": "keyword_bm25",
+      "source_report": "evals/phase3_hybrid_comparison.json",
+      "precision_at_5": 0.24,
+      "recall_at_5": 0.6166666667,
+      "mrr": 0.5303333333,
+      "latency_p50_ms": 0.2,
+      "latency_p95_ms": 0.4,
+      "failure_count": 0,
+      "estimated_cost_usd": null,
+      "token_usage": null
+    },
+    {
+      "id": "semantic_baseline",
+      "source_report": "evals/phase3_hybrid_comparison.json",
+      "precision_at_5": 0.356,
+      "recall_at_5": 0.895,
+      "mrr": 0.7616666667,
+      "latency_p50_ms": 531.5,
+      "latency_p95_ms": 624.9,
+      "failure_count": 0,
+      "estimated_cost_usd": null,
+      "token_usage": null
+    },
+    {
+      "id": "hybrid_rrf",
+      "source_report": "evals/phase3_hybrid_comparison.json",
+      "precision_at_5": 0.306,
+      "recall_at_5": 0.8166666667,
+      "mrr": 0.6816666667,
+      "latency_p50_ms": 535.5,
+      "latency_p95_ms": 640.1,
+      "failure_count": 0,
+      "estimated_cost_usd": null,
+      "token_usage": null
+    },
+    {
+      "id": "hybrid_local_reranker",
+      "source_report": "evals/phase4_rerank_comparison.json",
+      "precision_at_5": 0.254,
+      "recall_at_5": 0.68,
+      "mrr": 0.5821666667,
+      "latency_p50_ms": 535.9,
+      "latency_p95_ms": 640.5,
+      "rerank_latency_p50_ms": 0.4,
+      "rerank_latency_p95_ms": 0.7,
+      "failure_count": 0,
+      "estimated_cost_usd": null,
+      "token_usage": null
+    }
+  ],
+  "selected_configuration": {
+    "retrieval_mode": "semantic",
+    "rerank_enabled": false,
+    "document_embedding_cache": "enabled_for_public_ingestion_documents_only",
+    "query_embedding_cache": "disabled",
+    "reason": "Highest measured retrieval quality among compared modes; caching changes cost/ingestion behavior without changing evidence ranking."
+  },
+  "limitations": [
+    "Token usage and monetary cost were not exposed by the existing SDK response path.",
+    "The reranker result used a deterministic local scorer, not a downloaded CrossEncoder.",
+    "Memory was not measured for a model-backed reranker.",
+    "No configuration is accepted as clinically safe solely from these retrieval metrics."
+  ]
+}

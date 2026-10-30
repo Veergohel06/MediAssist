@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account – MediAssist{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="auth-header__icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <line x1="19" y1="8" x2="19" y2="14"></line>
+          <line x1="22" y1="11" x2="16" y2="11"></line>
+        </svg>
+      </div>
+      <h2 class="auth-title">Create Account</h2>
+      <p class="auth-subtitle">Join MediAssist for private, evidence-grounded health insights</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('auth.register') }}" novalidate id="registerForm">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+      <div class="form-group">
+        <label for="nameInput" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="nameInput"
+          name="name"
+          class="form-control"
+          placeholder="Jane Doe"
+          value="{{ request.form.get('name', '') }}"
+          required
+          autocomplete="name"
+          autofocus
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="emailInput" class="form-label">Email Address</label>
+        <input
+          type="email"
+          id="emailInput"
+          name="email"
+          class="form-control"
+          placeholder="jane@example.com"
+          value="{{ request.form.get('email', '') }}"
+          required
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="passwordInput" class="form-label">Password</label>
+        <div class="password-input-wrapper">
+          <input
+            type="password"
+            id="passwordInput"
+            name="password"
+            class="form-control"
+            placeholder="At least 8 characters with letters & numbers"
+            required
+            autocomplete="new-password"
+          />
+          <button
+            type="button"
+            class="password-toggle-btn"
+            id="toggleRegPasswordBtn"
+            aria-label="Toggle password visibility"
+            title="Toggle password visibility"
+          >
+            <svg class="pw-icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <svg class="pw-icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+            </svg>
+          </button>
+        </div>
+        <p class="form-hint">Must be 8+ characters and contain at least one letter and one number.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="passwordConfirmInput" class="form-label">Confirm Password</label>
+        <div class="password-input-wrapper">
+          <input
+            type="password"
+            id="passwordConfirmInput"
+            name="password_confirm"
+            class="form-control"
+            placeholder="Re-enter password"
+            required
+            autocomplete="new-password"
+          />
+          <button
+            type="button"
+            class="password-toggle-btn"
+            id="toggleRegConfirmBtn"
+            aria-label="Toggle confirm password visibility"
+            title="Toggle confirm password visibility"
+          >
+            <svg class="pw-icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <svg class="pw-icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="registerSubmitBtn">
+        Create Account & Sign In
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <span>Already have an account?</span>
+      <a href="{{ url_for('auth.login') }}" class="auth-link" id="toLoginLink">Sign in here</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupToggle(btnId, inputId) {
+    var btn = document.getElementById(btnId);
+    var input = document.getElementById(inputId);
+    if (btn && input) {
+      var eyeIcon = btn.querySelector('.pw-icon-eye');
+      var eyeOffIcon = btn.querySelector('.pw-icon-eye-off');
+      btn.addEventListener('click', function() {
+        if (input.type === 'password') {
+          input.type = 'text';
+          if (eyeIcon) eyeIcon.style.display = 'none';
+          if (eyeOffIcon) eyeOffIcon.style.display = 'block';
+        } else {
+          input.type = 'password';
+          if (eyeIcon) eyeIcon.style.display = 'block';
+          if (eyeOffIcon) eyeOffIcon.style.display = 'none';
+        }
+      });
+    }
+  }
+  setupToggle('toggleRegPasswordBtn', 'passwordInput');
+  setupToggle('toggleRegConfirmBtn', 'passwordConfirmInput');
+</script>
+{% endblock %}

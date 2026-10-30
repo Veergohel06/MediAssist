@@ -1,0 +1,3834 @@
+{
+  "top_k": 5,
+  "baseline": {
+    "case_count": 100,
+    "precision_at_k": 0.35600000000000004,
+    "recall_at_k": 0.895,
+    "mrr": 0.7616666666666667,
+    "abstention_accuracy": 0.91,
+    "mean_latency_ms": 539.2383389931638,
+    "latency_ms": {
+      "p50": 528.518500039354,
+      "p95": 581.1546000186354
+    },
+    "citation_support_rate": null,
+    "citation_validity": null,
+    "answer_relevance": null,
+    "factual_consistency": null,
+    "model_usage": {
+      "embedding_calls": null,
+      "generation_calls": 0,
+      "estimated_cost_usd": null
+    },
+    "cases": [
+      {
+        "case_id": "direct_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0005"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 1070.1278999913484,
+        "retrieval_latency_ms": 2.4905999889597297
+      },
+      {
+        "case_id": "direct_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 562.7073000650853,
+        "retrieval_latency_ms": 2.0402000518515706
+      },
+      {
+        "case_id": "direct_03",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 535.314799984917,
+        "retrieval_latency_ms": 1.8406999297440052
+      },
+      {
+        "case_id": "direct_04",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 534.4332000240684,
+        "retrieval_latency_ms": 1.7321000341325998
+      },
+      {
+        "case_id": "direct_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0001",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0002",
+          "hydration_and_water_balance:p0004",
+          "healthy_diet_and_nutrition:p0004"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 506.6096999216825,
+        "retrieval_latency_ms": 2.067500026896596
+      },
+      {
+        "case_id": "direct_06",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0005",
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0004",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 500.617100042291,
+        "retrieval_latency_ms": 1.9175000488758087
+      },
+      {
+        "case_id": "direct_07",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0001",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 697.1760999877006,
+        "retrieval_latency_ms": 1.7937999218702316
+      },
+      {
+        "case_id": "direct_08",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0006",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0001",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 580.3269000025466,
+        "retrieval_latency_ms": 1.715000020340085
+      },
+      {
+        "case_id": "direct_09",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 542.7098999498412,
+        "retrieval_latency_ms": 2.773999935016036
+      },
+      {
+        "case_id": "direct_10",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 501.4922999544069,
+        "retrieval_latency_ms": 2.034400007687509
+      },
+      {
+        "case_id": "direct_11",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 504.797299974598,
+        "retrieval_latency_ms": 1.650199992582202
+      },
+      {
+        "case_id": "direct_12",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.1780999563634,
+        "retrieval_latency_ms": 1.9229999743402004
+      },
+      {
+        "case_id": "direct_13",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0006"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 517.4703999655321,
+        "retrieval_latency_ms": 2.8556999750435352
+      },
+      {
+        "case_id": "direct_14",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 530.2578998962417,
+        "retrieval_latency_ms": 2.762499963864684
+      },
+      {
+        "case_id": "direct_15",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 563.71300003957,
+        "retrieval_latency_ms": 2.7710000285878778
+      },
+      {
+        "case_id": "direct_16",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0007",
+          "hydration_and_water_balance:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 510.91660000383854,
+        "retrieval_latency_ms": 2.1747000282630324
+      },
+      {
+        "case_id": "direct_17",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 490.13009993359447,
+        "retrieval_latency_ms": 2.157400012947619
+      },
+      {
+        "case_id": "direct_18",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 538.8720999471843,
+        "retrieval_latency_ms": 1.753099961206317
+      },
+      {
+        "case_id": "direct_19",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 512.3771000653505,
+        "retrieval_latency_ms": 1.752300071530044
+      },
+      {
+        "case_id": "direct_20",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.3206000411883,
+        "retrieval_latency_ms": 1.8031999934464693
+      },
+      {
+        "case_id": "paraphrase_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 540.4518999857828,
+        "retrieval_latency_ms": 2.5309999473392963
+      },
+      {
+        "case_id": "paraphrase_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 587.5835999613628,
+        "retrieval_latency_ms": 1.8215000163763762
+      },
+      {
+        "case_id": "paraphrase_03",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 548.3909000176936,
+        "retrieval_latency_ms": 2.0906999707221985
+      },
+      {
+        "case_id": "paraphrase_04",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 518.547400017269,
+        "retrieval_latency_ms": 1.97199999820441
+      },
+      {
+        "case_id": "paraphrase_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0004",
+          "physical_activity_guidelines:p0005",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 515.5394000466913,
+        "retrieval_latency_ms": 1.937100081704557
+      },
+      {
+        "case_id": "paraphrase_06",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0001",
+          "healthy_diet_and_nutrition:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 527.0985000533983,
+        "retrieval_latency_ms": 2.698600059375167
+      },
+      {
+        "case_id": "paraphrase_07",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "healthy_diet_and_nutrition:p0006",
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 511.28419989254326,
+        "retrieval_latency_ms": 1.873799948953092
+      },
+      {
+        "case_id": "paraphrase_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 497.07190005574375,
+        "retrieval_latency_ms": 2.925100037828088
+      },
+      {
+        "case_id": "paraphrase_09",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.865599966608,
+        "retrieval_latency_ms": 2.9862000374123454
+      },
+      {
+        "case_id": "paraphrase_10",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 546.5022000716999,
+        "retrieval_latency_ms": 2.805400057695806
+      },
+      {
+        "case_id": "paraphrase_11",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 529.9054998904467,
+        "retrieval_latency_ms": 2.779599977657199
+      },
+      {
+        "case_id": "paraphrase_12",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.9122998900712,
+        "retrieval_latency_ms": 2.0985999144613743
+      },
+      {
+        "case_id": "paraphrase_13",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 526.7175999470055,
+        "retrieval_latency_ms": 1.8019999843090773
+      },
+      {
+        "case_id": "paraphrase_14",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0005",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 538.0719000240788,
+        "retrieval_latency_ms": 2.735299989581108
+      },
+      {
+        "case_id": "paraphrase_15",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 553.5094999941066,
+        "retrieval_latency_ms": 2.187000005505979
+      },
+      {
+        "case_id": "multipart_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 544.0949000185356,
+        "retrieval_latency_ms": 2.9693000251427293
+      },
+      {
+        "case_id": "multipart_02",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 513.9691000804305,
+        "retrieval_latency_ms": 2.394600072875619
+      },
+      {
+        "case_id": "multipart_03",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 519.9687000131235,
+        "retrieval_latency_ms": 1.8072000239044428
+      },
+      {
+        "case_id": "multipart_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0006",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0006",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 560.7002000324428,
+        "retrieval_latency_ms": 2.3705000057816505
+      },
+      {
+        "case_id": "multipart_05",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0007",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 509.802799904719,
+        "retrieval_latency_ms": 2.233700011856854
+      },
+      {
+        "case_id": "multipart_06",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0006",
+          "physical_activity_guidelines:p0001"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 532.2931001428515,
+        "retrieval_latency_ms": 2.071100054308772
+      },
+      {
+        "case_id": "multipart_07",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0006",
+          "healthy_diet_and_nutrition:p0002",
+          "hypertension_and_heart_health:p0005",
+          "healthy_diet_and_nutrition:p0005",
+          "hypertension_and_heart_health:p0001"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0005",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 542.4793999409303,
+        "retrieval_latency_ms": 1.8279999494552612
+      },
+      {
+        "case_id": "multipart_08",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "emergency_red_flags_and_triage:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0001"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 527.283199946396,
+        "retrieval_latency_ms": 1.877899980172515
+      },
+      {
+        "case_id": "multipart_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 536.6663000313565,
+        "retrieval_latency_ms": 2.239600056782365
+      },
+      {
+        "case_id": "multipart_10",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 525.1531000249088,
+        "retrieval_latency_ms": 2.0698000444099307
+      },
+      {
+        "case_id": "multipart_11",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 555.3593999939039,
+        "retrieval_latency_ms": 1.8097999272868037
+      },
+      {
+        "case_id": "multipart_12",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "healthy_diet_and_nutrition:p0002",
+          "hydration_and_water_balance:p0002",
+          "physical_activity_guidelines:p0006"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "physical_activity_guidelines:p0006",
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 521.0407000267878,
+        "retrieval_latency_ms": 2.530899946577847
+      },
+      {
+        "case_id": "multipart_13",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 491.7765000136569,
+        "retrieval_latency_ms": 1.9164999248459935
+      },
+      {
+        "case_id": "multipart_14",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.4322001449764,
+        "retrieval_latency_ms": 1.8315000925213099
+      },
+      {
+        "case_id": "multipart_15",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0002",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 539.7290999535471,
+        "retrieval_latency_ms": 1.868800027295947
+      },
+      {
+        "case_id": "ambiguous_01",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0004",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 508.7406999664381,
+        "retrieval_latency_ms": 2.099399920552969
+      },
+      {
+        "case_id": "ambiguous_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "hypertension_and_heart_health:p0004",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 568.308399990201,
+        "retrieval_latency_ms": 1.8502000020816922
+      },
+      {
+        "case_id": "ambiguous_03",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 606.154199806042,
+        "retrieval_latency_ms": 1.9755999092012644
+      },
+      {
+        "case_id": "ambiguous_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 581.1546000186354,
+        "retrieval_latency_ms": 1.7287000082433224
+      },
+      {
+        "case_id": "ambiguous_05",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.2052999446169,
+        "retrieval_latency_ms": 2.7205999940633774
+      },
+      {
+        "case_id": "ambiguous_06",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0004",
+          "hydration_and_water_balance:p0005",
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 538.1438001058996,
+        "retrieval_latency_ms": 2.8531000716611743
+      },
+      {
+        "case_id": "ambiguous_07",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.25,
+        "abstention_correct": true,
+        "latency_ms": 551.214599981904,
+        "retrieval_latency_ms": 2.682100050151348
+      },
+      {
+        "case_id": "ambiguous_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0006",
+          "sleep_hygiene_and_disorders:p0007",
+          "common_cold_vs_influenza:p0004",
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 503.94549989141524,
+        "retrieval_latency_ms": 1.8427999457344413
+      },
+      {
+        "case_id": "ambiguous_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "hypertension_and_heart_health:p0007",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 520.4404999967664,
+        "retrieval_latency_ms": 2.7111999224871397
+      },
+      {
+        "case_id": "ambiguous_10",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 523.7936000339687,
+        "retrieval_latency_ms": 2.314700046554208
+      },
+      {
+        "case_id": "unsupported_01",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 520.8123000338674,
+        "retrieval_latency_ms": 1.833299989812076
+      },
+      {
+        "case_id": "unsupported_02",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 578.3455999335274,
+        "retrieval_latency_ms": 1.9799999427050352
+      },
+      {
+        "case_id": "unsupported_03",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 545.6896999385208,
+        "retrieval_latency_ms": 2.518199966289103
+      },
+      {
+        "case_id": "unsupported_04",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 530.9740998782218,
+        "retrieval_latency_ms": 2.1681999787688255
+      },
+      {
+        "case_id": "unsupported_05",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 515.551200020127,
+        "retrieval_latency_ms": 1.6976000042632222
+      },
+      {
+        "case_id": "unsupported_06",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0005",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 521.8458999879658,
+        "retrieval_latency_ms": 2.788200043141842
+      },
+      {
+        "case_id": "unsupported_07",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 528.518500039354,
+        "retrieval_latency_ms": 1.9663000712171197
+      },
+      {
+        "case_id": "unsupported_08",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 497.35790002159774,
+        "retrieval_latency_ms": 2.020500018261373
+      },
+      {
+        "case_id": "unsupported_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "hydration_and_water_balance:p0007",
+          "sleep_hygiene_and_disorders:p0007",
+          "hypertension_and_heart_health:p0001",
+          "hydration_and_water_balance:p0003"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 540.4454000527039,
+        "retrieval_latency_ms": 1.7748000100255013
+      },
+      {
+        "case_id": "unsupported_10",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0004",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 551.7737000482157,
+        "retrieval_latency_ms": 2.0070000318810344
+      },
+      {
+        "case_id": "conflicting_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 506.68300001416355,
+        "retrieval_latency_ms": 2.2013999987393618
+      },
+      {
+        "case_id": "conflicting_02",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 558.86340001598,
+        "retrieval_latency_ms": 2.7981000021100044
+      },
+      {
+        "case_id": "conflicting_03",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0001"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.2027999591082,
+        "retrieval_latency_ms": 2.8388999635353684
+      },
+      {
+        "case_id": "conflicting_04",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0007",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0001"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 504.7387999948114,
+        "retrieval_latency_ms": 3.0931999208405614
+      },
+      {
+        "case_id": "conflicting_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0004",
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0001",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0005"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0004"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 515.1225000154227,
+        "retrieval_latency_ms": 2.1427000174298882
+      },
+      {
+        "case_id": "conflicting_06",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0004",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 534.7212000051513,
+        "retrieval_latency_ms": 2.3029999574646354
+      },
+      {
+        "case_id": "conflicting_07",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "physical_activity_guidelines:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.3333333333333333,
+        "abstention_correct": true,
+        "latency_ms": 523.6492000985891,
+        "retrieval_latency_ms": 1.9585000118240714
+      },
+      {
+        "case_id": "conflicting_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 532.807599985972,
+        "retrieval_latency_ms": 2.1915000397711992
+      },
+      {
+        "case_id": "conflicting_09",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 525.6143999285996,
+        "retrieval_latency_ms": 2.0622999873012304
+      },
+      {
+        "case_id": "conflicting_10",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 536.7208999814466,
+        "retrieval_latency_ms": 1.8606999656185508
+      },
+      {
+        "case_id": "citation_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0005"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 632.8824999509379,
+        "retrieval_latency_ms": 1.8512000096961856
+      },
+      {
+        "case_id": "citation_02",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006",
+          "hydration_and_water_balance:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 558.6638000095263,
+        "retrieval_latency_ms": 2.2752999793738127
+      },
+      {
+        "case_id": "citation_03",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 544.5913000730798,
+        "retrieval_latency_ms": 2.226300071924925
+      },
+      {
+        "case_id": "citation_04",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.1594999786466,
+        "retrieval_latency_ms": 1.8342999974265695
+      },
+      {
+        "case_id": "citation_05",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 534.1521999798715,
+        "retrieval_latency_ms": 1.7816999461501837
+      },
+      {
+        "case_id": "citation_06",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.3384000128135,
+        "retrieval_latency_ms": 2.7907000621780753
+      },
+      {
+        "case_id": "citation_07",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0006",
+          "sleep_hygiene_and_disorders:p0005",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 519.5619999431074,
+        "retrieval_latency_ms": 2.9698999132961035
+      },
+      {
+        "case_id": "citation_08",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 521.0414001485333,
+        "retrieval_latency_ms": 2.4536000564694405
+      },
+      {
+        "case_id": "citation_09",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 570.49110007938,
+        "retrieval_latency_ms": 2.8620000230148435
+      },
+      {
+        "case_id": "citation_10",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 504.9798998516053,
+        "retrieval_latency_ms": 1.976999919861555
+      },
+      {
+        "case_id": "safety_01",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0004"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 511.64229994174093,
+        "retrieval_latency_ms": 1.7182999290525913
+      },
+      {
+        "case_id": "safety_02",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 550.2923998283222,
+        "retrieval_latency_ms": 1.8391999183222651
+      },
+      {
+        "case_id": "safety_03",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 516.2284999387339,
+        "retrieval_latency_ms": 2.577599952928722
+      },
+      {
+        "case_id": "safety_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0005",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 492.0240000355989,
+        "retrieval_latency_ms": 1.9828000804409385
+      },
+      {
+        "case_id": "safety_05",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 530.6609999388456,
+        "retrieval_latency_ms": 2.075799973681569
+      },
+      {
+        "case_id": "safety_06",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0007",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.25,
+        "abstention_correct": true,
+        "latency_ms": 544.7396000381559,
+        "retrieval_latency_ms": 2.5212999898940325
+      },
+      {
+        "case_id": "safety_07",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 543.9772000536323,
+        "retrieval_latency_ms": 2.271799952723086
+      },
+      {
+        "case_id": "safety_08",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0007",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 516.7661000741646,
+        "retrieval_latency_ms": 1.8853000365197659
+      },
+      {
+        "case_id": "safety_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "common_cold_vs_influenza:p0006",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 524.3833999847993,
+        "retrieval_latency_ms": 1.727099996060133
+      },
+      {
+        "case_id": "safety_10",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.3333333333333333,
+        "abstention_correct": true,
+        "latency_ms": 537.9684999352321,
+        "retrieval_latency_ms": 2.1161999320611358
+      }
+    ],
+    "retrieval_latency_ms": {
+      "mean": 2.1979219967033714,
+      "p50": 2.071100054308772,
+      "p95": 2.8620000230148435
+    },
+    "embedding_latency_ms": {
+      "mean": 537.0404169964604,
+      "p50": 526.5521999681368,
+      "p95": 579.4259000103921
+    }
+  },
+  "upgraded": {
+    "case_count": 100,
+    "precision_at_k": 0.35600000000000004,
+    "recall_at_k": 0.895,
+    "mrr": 0.7616666666666667,
+    "abstention_accuracy": 0.91,
+    "mean_latency_ms": 539.3709429958835,
+    "latency_ms": {
+      "p50": 528.7451999029145,
+      "p95": 582.0340000791475
+    },
+    "citation_support_rate": null,
+    "citation_validity": null,
+    "answer_relevance": null,
+    "factual_consistency": null,
+    "model_usage": {
+      "embedding_calls": null,
+      "generation_calls": 0,
+      "estimated_cost_usd": null
+    },
+    "cases": [
+      {
+        "case_id": "direct_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0005"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 1070.55260008201,
+        "retrieval_latency_ms": 2.9153000796213746
+      },
+      {
+        "case_id": "direct_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 563.5135000338778,
+        "retrieval_latency_ms": 2.8464000206440687
+      },
+      {
+        "case_id": "direct_03",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 535.345199983567,
+        "retrieval_latency_ms": 1.87109992839396
+      },
+      {
+        "case_id": "direct_04",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 535.2301999228075,
+        "retrieval_latency_ms": 2.529099932871759
+      },
+      {
+        "case_id": "direct_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0001",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0002",
+          "hydration_and_water_balance:p0004",
+          "healthy_diet_and_nutrition:p0004"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 506.8020998733118,
+        "retrieval_latency_ms": 2.2598999785259366
+      },
+      {
+        "case_id": "direct_06",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0005",
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0004",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 500.5387000273913,
+        "retrieval_latency_ms": 1.8391000339761376
+      },
+      {
+        "case_id": "direct_07",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0001",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 697.0701001118869,
+        "retrieval_latency_ms": 1.687800046056509
+      },
+      {
+        "case_id": "direct_08",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0006",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0001",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 580.4728000657633,
+        "retrieval_latency_ms": 1.8609000835567713
+      },
+      {
+        "case_id": "direct_09",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 542.0522999484092,
+        "retrieval_latency_ms": 2.1163999335840344
+      },
+      {
+        "case_id": "direct_10",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 501.48300000000745,
+        "retrieval_latency_ms": 2.0251000532880425
+      },
+      {
+        "case_id": "direct_11",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 504.9129999242723,
+        "retrieval_latency_ms": 1.7658999422565103
+      },
+      {
+        "case_id": "direct_12",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.1491999691352,
+        "retrieval_latency_ms": 1.8940999871119857
+      },
+      {
+        "case_id": "direct_13",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0006"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 517.1870000194758,
+        "retrieval_latency_ms": 2.572300028987229
+      },
+      {
+        "case_id": "direct_14",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 529.3046998558566,
+        "retrieval_latency_ms": 1.809299923479557
+      },
+      {
+        "case_id": "direct_15",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 562.6695001265034,
+        "retrieval_latency_ms": 1.7275001155212522
+      },
+      {
+        "case_id": "direct_16",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0007",
+          "hydration_and_water_balance:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 510.62780001666397,
+        "retrieval_latency_ms": 1.8859000410884619
+      },
+      {
+        "case_id": "direct_17",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 490.49029988236725,
+        "retrieval_latency_ms": 2.517599961720407
+      },
+      {
+        "case_id": "direct_18",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 539.0812999103218,
+        "retrieval_latency_ms": 1.9622999243438244
+      },
+      {
+        "case_id": "direct_19",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 513.0660000722855,
+        "retrieval_latency_ms": 2.4412000784650445
+      },
+      {
+        "case_id": "direct_20",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 524.440300068818,
+        "retrieval_latency_ms": 2.9229000210762024
+      },
+      {
+        "case_id": "paraphrase_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 540.7791000325233,
+        "retrieval_latency_ms": 2.8581999940797687
+      },
+      {
+        "case_id": "paraphrase_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 588.5811998741701,
+        "retrieval_latency_ms": 2.8190999291837215
+      },
+      {
+        "case_id": "paraphrase_03",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 549.058899981901,
+        "retrieval_latency_ms": 2.7586999349296093
+      },
+      {
+        "case_id": "paraphrase_04",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 518.7395999673754,
+        "retrieval_latency_ms": 2.164199948310852
+      },
+      {
+        "case_id": "paraphrase_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0004",
+          "physical_activity_guidelines:p0005",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 515.6215999741107,
+        "retrieval_latency_ms": 2.019300009123981
+      },
+      {
+        "case_id": "paraphrase_06",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0001",
+          "healthy_diet_and_nutrition:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 526.2100999243557,
+        "retrieval_latency_ms": 1.810199930332601
+      },
+      {
+        "case_id": "paraphrase_07",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "healthy_diet_and_nutrition:p0006",
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 511.20879990048707,
+        "retrieval_latency_ms": 1.7983999568969011
+      },
+      {
+        "case_id": "paraphrase_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 496.3372000493109,
+        "retrieval_latency_ms": 2.1904000313952565
+      },
+      {
+        "case_id": "paraphrase_09",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.3916998505592,
+        "retrieval_latency_ms": 2.512299921363592
+      },
+      {
+        "case_id": "paraphrase_10",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 545.8257000427693,
+        "retrieval_latency_ms": 2.1289000287652016
+      },
+      {
+        "case_id": "paraphrase_11",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 528.9636999368668,
+        "retrieval_latency_ms": 1.8378000240772963
+      },
+      {
+        "case_id": "paraphrase_12",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0002",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.8513000076637,
+        "retrieval_latency_ms": 2.037600032053888
+      },
+      {
+        "case_id": "paraphrase_13",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 526.7106000101194,
+        "retrieval_latency_ms": 1.7950000474229455
+      },
+      {
+        "case_id": "paraphrase_14",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0005",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.1757000684738,
+        "retrieval_latency_ms": 1.8391000339761376
+      },
+      {
+        "case_id": "paraphrase_15",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 553.0769999604672,
+        "retrieval_latency_ms": 1.7544999718666077
+      },
+      {
+        "case_id": "multipart_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 543.415000080131,
+        "retrieval_latency_ms": 2.289400086738169
+      },
+      {
+        "case_id": "multipart_02",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 513.5724000865594,
+        "retrieval_latency_ms": 1.9979000790044665
+      },
+      {
+        "case_id": "multipart_03",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 521.1922999005765,
+        "retrieval_latency_ms": 3.0307999113574624
+      },
+      {
+        "case_id": "multipart_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0006",
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0006",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 561.2570000812411,
+        "retrieval_latency_ms": 2.927300054579973
+      },
+      {
+        "case_id": "multipart_05",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0007",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 510.48289984464645,
+        "retrieval_latency_ms": 2.9137999517843127
+      },
+      {
+        "case_id": "multipart_06",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0005",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0006",
+          "physical_activity_guidelines:p0001"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 532.0606001187116,
+        "retrieval_latency_ms": 1.838600030168891
+      },
+      {
+        "case_id": "multipart_07",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0006",
+          "healthy_diet_and_nutrition:p0002",
+          "hypertension_and_heart_health:p0005",
+          "healthy_diet_and_nutrition:p0005",
+          "hypertension_and_heart_health:p0001"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0005",
+          "healthy_diet_and_nutrition:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 542.5200999015942,
+        "retrieval_latency_ms": 1.868699910119176
+      },
+      {
+        "case_id": "multipart_08",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006",
+          "emergency_red_flags_and_triage:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0001"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0006",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 527.963399887085,
+        "retrieval_latency_ms": 2.558099920861423
+      },
+      {
+        "case_id": "multipart_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.608899991028,
+        "retrieval_latency_ms": 3.182200016453862
+      },
+      {
+        "case_id": "multipart_10",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 524.9040998751298,
+        "retrieval_latency_ms": 1.820799894630909
+      },
+      {
+        "case_id": "multipart_11",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 555.8146999683231,
+        "retrieval_latency_ms": 2.2650999017059803
+      },
+      {
+        "case_id": "multipart_12",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "healthy_diet_and_nutrition:p0002",
+          "hydration_and_water_balance:p0002",
+          "physical_activity_guidelines:p0006"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "physical_activity_guidelines:p0006",
+          "healthy_diet_and_nutrition:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.6666666666666666,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 520.5383001593873,
+        "retrieval_latency_ms": 2.02850007917732
+      },
+      {
+        "case_id": "multipart_13",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 491.7299001244828,
+        "retrieval_latency_ms": 1.8699000356718898
+      },
+      {
+        "case_id": "multipart_14",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.8340000612661,
+        "retrieval_latency_ms": 2.2333000088110566
+      },
+      {
+        "case_id": "multipart_15",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0002",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 539.8671999573708,
+        "retrieval_latency_ms": 2.006900031119585
+      },
+      {
+        "case_id": "ambiguous_01",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0004",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 509.5804000739008,
+        "retrieval_latency_ms": 2.939100028015673
+      },
+      {
+        "case_id": "ambiguous_02",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0007",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "hypertension_and_heart_health:p0004",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 569.2760000238195,
+        "retrieval_latency_ms": 2.817800035700202
+      },
+      {
+        "case_id": "ambiguous_03",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 607.0474998559803,
+        "retrieval_latency_ms": 2.868899959139526
+      },
+      {
+        "case_id": "ambiguous_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0003",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 582.0340000791475,
+        "retrieval_latency_ms": 2.608100068755448
+      },
+      {
+        "case_id": "ambiguous_05",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "hypertension_and_heart_health:p0007"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 536.6338999010623,
+        "retrieval_latency_ms": 2.1491999505087733
+      },
+      {
+        "case_id": "ambiguous_06",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0004",
+          "hydration_and_water_balance:p0005",
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 536.9903000537306,
+        "retrieval_latency_ms": 1.699600019492209
+      },
+      {
+        "case_id": "ambiguous_07",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0004",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.25,
+        "abstention_correct": true,
+        "latency_ms": 550.4408999113366,
+        "retrieval_latency_ms": 1.908399979583919
+      },
+      {
+        "case_id": "ambiguous_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0006",
+          "sleep_hygiene_and_disorders:p0007",
+          "common_cold_vs_influenza:p0004",
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 504.97709994670004,
+        "retrieval_latency_ms": 2.8744000010192394
+      },
+      {
+        "case_id": "ambiguous_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "hypertension_and_heart_health:p0007",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 519.7097001364455,
+        "retrieval_latency_ms": 1.9804000621661544
+      },
+      {
+        "case_id": "ambiguous_10",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 524.006100022234,
+        "retrieval_latency_ms": 2.5272000348195434
+      },
+      {
+        "case_id": "unsupported_01",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 521.7949999496341,
+        "retrieval_latency_ms": 2.815999905578792
+      },
+      {
+        "case_id": "unsupported_02",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 579.1651000035927,
+        "retrieval_latency_ms": 2.799500012770295
+      },
+      {
+        "case_id": "unsupported_03",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 545.960099902004,
+        "retrieval_latency_ms": 2.7885999297723174
+      },
+      {
+        "case_id": "unsupported_04",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 530.8317999588326,
+        "retrieval_latency_ms": 2.0259000593796372
+      },
+      {
+        "case_id": "unsupported_05",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 515.6581000192091,
+        "retrieval_latency_ms": 1.8045000033453107
+      },
+      {
+        "case_id": "unsupported_06",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0005",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 521.217199973762,
+        "retrieval_latency_ms": 2.159500028938055
+      },
+      {
+        "case_id": "unsupported_07",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 528.7451999029145,
+        "retrieval_latency_ms": 2.1929999347776175
+      },
+      {
+        "case_id": "unsupported_08",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 497.0489999977872,
+        "retrieval_latency_ms": 1.7115999944508076
+      },
+      {
+        "case_id": "unsupported_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "hydration_and_water_balance:p0007",
+          "sleep_hygiene_and_disorders:p0007",
+          "hypertension_and_heart_health:p0001",
+          "hydration_and_water_balance:p0003"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 540.3563000727445,
+        "retrieval_latency_ms": 1.685700030066073
+      },
+      {
+        "case_id": "unsupported_10",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0004",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0002"
+        ],
+        "expected_relevant_ids": [],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": true,
+        "latency_ms": 551.7100000288337,
+        "retrieval_latency_ms": 1.943300012499094
+      },
+      {
+        "case_id": "conflicting_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0006"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 506.7959000589326,
+        "retrieval_latency_ms": 2.3143000435084105
+      },
+      {
+        "case_id": "conflicting_02",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0009",
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0003",
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 557.9282001126558,
+        "retrieval_latency_ms": 1.862900098785758
+      },
+      {
+        "case_id": "conflicting_03",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006",
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0001"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0005",
+          "common_cold_vs_influenza:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 522.1589999273419,
+        "retrieval_latency_ms": 1.795099931769073
+      },
+      {
+        "case_id": "conflicting_04",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003",
+          "hypertension_and_heart_health:p0007",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0001"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0002",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 503.6781000671908,
+        "retrieval_latency_ms": 2.0324999932199717
+      },
+      {
+        "case_id": "conflicting_05",
+        "retrieved_ids": [
+          "healthy_diet_and_nutrition:p0004",
+          "healthy_diet_and_nutrition:p0002",
+          "healthy_diet_and_nutrition:p0001",
+          "healthy_diet_and_nutrition:p0003",
+          "healthy_diet_and_nutrition:p0005"
+        ],
+        "expected_relevant_ids": [
+          "healthy_diet_and_nutrition:p0004"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 515.8070999896154,
+        "retrieval_latency_ms": 2.827299991622567
+      },
+      {
+        "case_id": "conflicting_06",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0004",
+          "hydration_and_water_balance:p0007"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0003",
+          "hydration_and_water_balance:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 535.2666999679059,
+        "retrieval_latency_ms": 2.848499920219183
+      },
+      {
+        "case_id": "conflicting_07",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0002"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "physical_activity_guidelines:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 0.3333333333333333,
+        "abstention_correct": true,
+        "latency_ms": 524.5945000788197,
+        "retrieval_latency_ms": 2.903799992054701
+      },
+      {
+        "case_id": "conflicting_08",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 533.5147998994216,
+        "retrieval_latency_ms": 2.8986999532207847
+      },
+      {
+        "case_id": "conflicting_09",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0007"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 526.3864999869838,
+        "retrieval_latency_ms": 2.83440004568547
+      },
+      {
+        "case_id": "conflicting_10",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "emergency_red_flags_and_triage:p0001",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0009"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 537.7000999869779,
+        "retrieval_latency_ms": 2.839899971149862
+      },
+      {
+        "case_id": "citation_01",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0007",
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0005"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0002"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 633.8466999586672,
+        "retrieval_latency_ms": 2.815400017425418
+      },
+      {
+        "case_id": "citation_02",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0006",
+          "common_cold_vs_influenza:p0006",
+          "hydration_and_water_balance:p0001",
+          "tension_headaches_and_migraines:p0004"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 559.2133000027388,
+        "retrieval_latency_ms": 2.8247999725863338
+      },
+      {
+        "case_id": "citation_03",
+        "retrieved_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0001",
+          "sleep_hygiene_and_disorders:p0005",
+          "sleep_hygiene_and_disorders:p0002",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "expected_relevant_ids": [
+          "sleep_hygiene_and_disorders:p0003",
+          "sleep_hygiene_and_disorders:p0004"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 545.0096999993548,
+        "retrieval_latency_ms": 2.6446999981999397
+      },
+      {
+        "case_id": "citation_04",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 523.3887999784201,
+        "retrieval_latency_ms": 2.063599997200072
+      },
+      {
+        "case_id": "citation_05",
+        "retrieved_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0001",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004",
+          "common_cold_vs_influenza:p0005"
+        ],
+        "expected_relevant_ids": [
+          "common_cold_vs_influenza:p0002",
+          "common_cold_vs_influenza:p0003",
+          "common_cold_vs_influenza:p0004"
+        ],
+        "precision_at_k": 0.6,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 534.452100051567,
+        "retrieval_latency_ms": 2.0816000178456306
+      },
+      {
+        "case_id": "citation_06",
+        "retrieved_ids": [
+          "hypertension_and_heart_health:p0006",
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0001",
+          "hypertension_and_heart_health:p0004",
+          "hypertension_and_heart_health:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hypertension_and_heart_health:p0005",
+          "hypertension_and_heart_health:p0006"
+        ],
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 521.4437999529764,
+        "retrieval_latency_ms": 1.8961000023409724
+      },
+      {
+        "case_id": "citation_07",
+        "retrieved_ids": [
+          "physical_activity_guidelines:p0006",
+          "sleep_hygiene_and_disorders:p0005",
+          "physical_activity_guidelines:p0004",
+          "physical_activity_guidelines:p0003",
+          "physical_activity_guidelines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "physical_activity_guidelines:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 518.4429000364617,
+        "retrieval_latency_ms": 1.8508000066503882
+      },
+      {
+        "case_id": "citation_08",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "tension_headaches_and_migraines:p0002",
+          "tension_headaches_and_migraines:p0005",
+          "tension_headaches_and_migraines:p0001",
+          "tension_headaches_and_migraines:p0003"
+        ],
+        "expected_relevant_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 520.2823001891375,
+        "retrieval_latency_ms": 1.6945000970736146
+      },
+      {
+        "case_id": "citation_09",
+        "retrieved_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0001",
+          "hydration_and_water_balance:p0002",
+          "hydration_and_water_balance:p0005",
+          "hydration_and_water_balance:p0003"
+        ],
+        "expected_relevant_ids": [
+          "hydration_and_water_balance:p0006",
+          "hydration_and_water_balance:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.5,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 569.7877000784501,
+        "retrieval_latency_ms": 2.158600022085011
+      },
+      {
+        "case_id": "citation_10",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [],
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 505.47129998449236,
+        "retrieval_latency_ms": 2.4684000527486205
+      },
+      {
+        "case_id": "safety_01",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0004",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0004"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 512.8756000194699,
+        "retrieval_latency_ms": 2.9516000067815185
+      },
+      {
+        "case_id": "safety_02",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 551.2325998861343,
+        "retrieval_latency_ms": 2.7793999761343002
+      },
+      {
+        "case_id": "safety_03",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0005",
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0007",
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0005"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 516.5111999958754,
+        "retrieval_latency_ms": 2.8603000100702047
+      },
+      {
+        "case_id": "safety_04",
+        "retrieved_ids": [
+          "tension_headaches_and_migraines:p0007",
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0005",
+          "emergency_red_flags_and_triage:p0003",
+          "tension_headaches_and_migraines:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "abstention_correct": true,
+        "latency_ms": 492.88909998722374,
+        "retrieval_latency_ms": 2.8479000320658088
+      },
+      {
+        "case_id": "safety_05",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "emergency_red_flags_and_triage:p0006",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001",
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0008"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 531.4267999492586,
+        "retrieval_latency_ms": 2.8415999840945005
+      },
+      {
+        "case_id": "safety_06",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0008",
+          "hypertension_and_heart_health:p0007",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.25,
+        "abstention_correct": true,
+        "latency_ms": 545.0424000155181,
+        "retrieval_latency_ms": 2.8240999672561884
+      },
+      {
+        "case_id": "safety_07",
+        "retrieved_ids": [],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0002"
+        ],
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "mrr": 0.0,
+        "abstention_correct": false,
+        "latency_ms": 544.4865000899881,
+        "retrieval_latency_ms": 2.781099989078939
+      },
+      {
+        "case_id": "safety_08",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0007",
+          "tension_headaches_and_migraines:p0007",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0007"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 517.8165000397712,
+        "retrieval_latency_ms": 2.9357000021263957
+      },
+      {
+        "case_id": "safety_09",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0006",
+          "emergency_red_flags_and_triage:p0008",
+          "common_cold_vs_influenza:p0006",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0006"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "abstention_correct": true,
+        "latency_ms": 525.5220999242738,
+        "retrieval_latency_ms": 2.8657999355345964
+      },
+      {
+        "case_id": "safety_10",
+        "retrieved_ids": [
+          "emergency_red_flags_and_triage:p0009",
+          "hypertension_and_heart_health:p0007",
+          "emergency_red_flags_and_triage:p0003",
+          "common_cold_vs_influenza:p0006",
+          "emergency_red_flags_and_triage:p0001"
+        ],
+        "expected_relevant_ids": [
+          "emergency_red_flags_and_triage:p0003"
+        ],
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.3333333333333333,
+        "abstention_correct": true,
+        "latency_ms": 538.6557000456378,
+        "retrieval_latency_ms": 2.8034000424668193
+      }
+    ],
+    "retrieval_latency_ms": {
+      "mean": 2.3305259994231164,
+      "p50": 2.1929999347776175,
+      "p95": 2.927300054579973
+    },
+    "embedding_latency_ms": {
+      "mean": 537.0404169964604,
+      "p50": 526.5521999681368,
+      "p95": 579.4259000103921
+    }
+  },
+  "delta": {
+    "precision_at_k": 0.0,
+    "recall_at_k": 0.0,
+    "mrr": 0.0,
+    "abstention_accuracy": 0.0
+  },
+  "note": "Metrics are measurements from the supplied dataset and retrievers; no improvement is assumed.",
+  "dataset": "evals\\baseline_eval.json",
+  "generated_by": "evaluate_rag.py"
+}

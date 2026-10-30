@@ -1,0 +1,50 @@
+{
+  "run_id": "20261021T075608Z",
+  "mode": "mock",
+  "dataset": "C:\\Users\\Veer Gohel\\OneDrive\\Desktop\\mediassist\\evaluation\\dataset.jsonl",
+  "dataset_sha256": "f0ba90a0f10ca4f3958ae8e0d28482494e791d2af93912f7013ce6c037e2c34c",
+  "mocked": true,
+  "production_claim": false,
+  "retrieval": {
+    "case_count": 10,
+    "k": 5,
+    "precision_at_k": 0.45999999999999996,
+    "recall_at_k": 1.0,
+    "mrr": 0.8,
+    "ndcg_at_k": 0.9833991232398148,
+    "latency_ms": {
+      "mean_ms": 0.0,
+      "p50_ms": 0.0,
+      "p95_ms": 0.0
+    },
+    "failure_count": 0
+  },
+  "citation": {
+    "validity_rate": null,
+    "invalid_id_count": 0,
+    "unknown_url_count": 0
+  },
+  "abstention": {
+    "appropriate_abstention_rate": null,
+    "unnecessary_refusal_rate": 0.2
+  },
+  "generation": {
+    "answer_relevance": null,
+    "factual_support": null,
+    "token_usage": null,
+    "estimated_cost_usd": null,
+    "note": "Answer metrics and usage require reviewed/generated records; automated structure is not ground truth."
+  },
+  "configuration": {
+    "embedding_model": "gemini-embedding-001",
+    "model": "gemini-2.5-flash",
+    "index": "knowledge/faiss_index.bin",
+    "reranker": false,
+    "memory_usage_mb": null
+  },
+  "artifacts": {
+    "predictions": "C:\\Users\\Veer Gohel\\OneDrive\\Desktop\\mediassist\\evaluation\\predictions\\20261021T075608Z_mock.jsonl",
+    "json_report": "C:\\Users\\Veer Gohel\\OneDrive\\Desktop\\mediassist\\evaluation\\reports\\20261021T075608Z_mock.json",
+    "markdown_report": "C:\\Users\\Veer Gohel\\OneDrive\\Desktop\\mediassist\\evaluation\\reports\\20261021T075608Z_mock.md"
+  }
+}

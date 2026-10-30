@@ -1,0 +1,3057 @@
+{
+  "benchmark_run_id": "20261021T082932Z",
+  "version": "phase7-v2",
+  "dataset": "C:\\Users\\Veer Gohel\\OneDrive\\Desktop\\mediassist\\evaluation\\dataset.jsonl",
+  "dataset_sha256": "f0ba90a0f10ca4f3958ae8e0d28482494e791d2af93912f7013ce6c037e2c34c",
+  "selection_policy": "Select only configurations that do not materially degrade reviewed evidence quality or safety; speed alone is insufficient.",
+  "rollback_procedure": "To rollback from selected_optimized to baseline, set RAG_CACHE_ENABLED=false, GEMINI_MODEL=gemini-2.5-flash, RAG_TOP_K=5, RAG_CANDIDATE_K=12 in .env.",
+  "selected_configuration": {
+    "profile_name": "optimized_v1",
+    "retrieval_mode": "semantic",
+    "top_k": 5,
+    "candidate_k": 12,
+    "rerank_enabled": false,
+    "max_chunk_size": 650,
+    "chunk_overlap": 100,
+    "embedding_batch_size": 15,
+    "caching_enabled": true,
+    "generation_model": "gemini-2.5-flash"
+  },
+  "experiments": [
+    {
+      "id": "exp_context_topk_3",
+      "category": "context_size",
+      "variable": "top_k",
+      "settings": {
+        "id": "exp_context_topk_3",
+        "category": "context_size",
+        "variable": "top_k",
+        "retrieval_mode": "semantic",
+        "top_k": 3,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Evaluate compact final context (top_k=3) for lower prompt tokens and lower cost."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 3,
+        "precision_at_k": 0.6333333333333333,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 222.4804300116375,
+          "p50_ms": 1.2332999613136053,
+          "p95_ms": 2213.5350999888033
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 49.547
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.3333333333333333,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2213.5350999888033,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.3333333333333333,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0474000591784716,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.9215000318363309,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.6666666666666666,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.34680001065135,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.2332999613136053,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.3333333333333333,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.6824000049382448,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.6666666666666666,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.1573000811040401,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.6666666666666666,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0594000341370702,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.3333333333333333,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.5051999362185597,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3159000081941485,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_context_topk_5",
+      "category": "context_size",
+      "variable": "top_k",
+      "settings": {
+        "id": "exp_context_topk_5",
+        "category": "context_size",
+        "variable": "top_k",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Baseline context size (top_k=5) balancing recall and prompt size."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.0481100180186331,
+          "p50_ms": 1.0007000528275967,
+          "p95_ms": 1.3790000230073929
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.388
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.347700017504394,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8664000779390335,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 1.2175000738352537,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0007000528275967,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7537000346928835,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0698999976739287,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.0236999951303005,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9407999459654093,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8816999616101384,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3790000230073929,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_context_topk_7",
+      "category": "context_size",
+      "variable": "top_k",
+      "settings": {
+        "id": "exp_context_topk_7",
+        "category": "context_size",
+        "variable": "top_k",
+        "retrieval_mode": "semantic",
+        "top_k": 7,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Expanded context size (top_k=7) testing if extra evidence improves complex queries."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 7,
+        "precision_at_k": 0.38571428571428573,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.261340023484081,
+          "p50_ms": 1.0813999688252807,
+          "p95_ms": 1.942100003361702
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.385
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007",
+            "sleep_hygiene_and_disorders:p0005",
+            "physical_activity_guidelines:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.14285714285714285,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.2974001001566648,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004",
+            "hydration_and_water_balance:p0003",
+            "emergency_red_flags_and_triage:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.14285714285714285,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.942100003361702,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006",
+            "common_cold_vs_influenza:p0005",
+            "emergency_red_flags_and_triage:p0009"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.42857142857142855,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 1.6203999985009432,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007",
+            "tension_headaches_and_migraines:p0003",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.2857142857142857,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.1045000283047557,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7661000126972795,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0001"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.14285714285714285,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0813999688252807,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001",
+            "hypertension_and_heart_health:p0005",
+            "hypertension_and_heart_health:p0006"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.2857142857142857,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.9094001036137342,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.2857142857142857,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.021199976094067,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "hypertension_and_heart_health:p0007",
+            "emergency_red_flags_and_triage:p0009"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.14285714285714285,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8767000399529934,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9942000033333898,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_candidate_pool_8",
+      "category": "candidate_pool",
+      "variable": "candidate_k",
+      "settings": {
+        "id": "exp_candidate_pool_8",
+        "category": "candidate_pool",
+        "variable": "candidate_k",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 8,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Constrained candidate pool (k=8) to evaluate lower search bounds."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.0595700005069375,
+          "p50_ms": 0.9985999204218388,
+          "p95_ms": 1.5188000397756696
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.384
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3845000648871064,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3000000035390258,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.8478999370709062,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8332000579684973,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7183999987319112,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0489999549463391,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 0.9985999204218388,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.5188000397756696,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9425000753253698,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.002799952402711,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_candidate_pool_12",
+      "category": "candidate_pool",
+      "variable": "candidate_k",
+      "settings": {
+        "id": "exp_candidate_pool_12",
+        "category": "candidate_pool",
+        "variable": "candidate_k",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Baseline candidate pool (k=12) balancing candidate diversity and score filtering."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.2229399988427758,
+          "p50_ms": 1.1044000275433064,
+          "p95_ms": 2.034400007687509
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.384
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.034400007687509,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.1578999692574143,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.8770000422373414,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8560999995097518,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9336000075563788,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.52299995534122,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.5749000012874603,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.1268999660387635,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0412000119686127,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.1044000275433064,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_candidate_pool_20",
+      "category": "candidate_pool",
+      "variable": "candidate_k",
+      "settings": {
+        "id": "exp_candidate_pool_20",
+        "category": "candidate_pool",
+        "variable": "candidate_k",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 20,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Broad candidate pool (k=20) for maximal candidate coverage."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.9138999981805682,
+          "p50_ms": 1.9271000055596232,
+          "p95_ms": 2.4949999060481787
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.383
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.1964999614283442,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.335099969059229,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 1.8760999664664268,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3064000522717834,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0186999570578337,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.4949999060481787,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.6502001089975238,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.1313000470399857,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.9271000055596232,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.202600007876754,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_rerank_disabled",
+      "category": "reranker",
+      "variable": "rerank_enabled",
+      "settings": {
+        "id": "exp_rerank_disabled",
+        "category": "reranker",
+        "variable": "rerank_enabled",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Direct semantic ranking without token-overlap reranker."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.0874800267629325,
+          "p50_ms": 1.0065999813377857,
+          "p95_ms": 1.4799999771639705
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.383
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.3718000845983624,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.2469000648707151,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.9316999930888414,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8492000633850694,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7173999911174178,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0559000074863434,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.244200044311583,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.4799999771639705,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9711000602692366,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0065999813377857,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_rerank_candidate_10",
+      "category": "reranker",
+      "variable": "rerank_candidate_k",
+      "settings": {
+        "id": "exp_rerank_candidate_10",
+        "category": "reranker",
+        "variable": "rerank_candidate_k",
+        "retrieval_mode": "hybrid",
+        "top_k": 5,
+        "candidate_k": 10,
+        "rerank_candidate_k": 10,
+        "rerank_enabled": true,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Hybrid retrieval with token-overlap reranking on 10 candidates."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.33999999999999997,
+        "recall_at_k": 0.85,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.971669894179724,
+        "latency_ms": {
+          "mean_ms": 2.023689995985478,
+          "p50_ms": 2.0906999707221985,
+          "p95_ms": 2.705099992454052
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.387
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "hypertension_and_heart_health:p0006",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0001"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.333299955353141,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0004",
+            "common_cold_vs_influenza:p0002",
+            "emergency_red_flags_and_triage:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.231899998150766,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0002",
+            "tension_headaches_and_migraines:p0006",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.929544338806268,
+          "latency_ms": 2.0133000798523426,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "emergency_red_flags_and_triage:p0007",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0003"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.7720999894663692,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7300999714061618,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0008",
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.274799975566566,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0006"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.705099992454052,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0007",
+            "sleep_hygiene_and_disorders:p0006",
+            "healthy_diet_and_nutrition:p0002"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.7871546029909718,
+          "latency_ms": 1.9485000520944595,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "common_cold_vs_influenza:p0006",
+            "hypertension_and_heart_health:p0007",
+            "emergency_red_flags_and_triage:p0009",
+            "emergency_red_flags_and_triage:p0006"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.1370999747887254,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0006",
+            "hypertension_and_heart_health:p0004",
+            "hydration_and_water_balance:p0005",
+            "healthy_diet_and_nutrition:p0004",
+            "hydration_and_water_balance:p0007"
+          ],
+          "expected_relevant_ids": [],
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.0906999707221985,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_rerank_candidate_20",
+      "category": "reranker",
+      "variable": "rerank_candidate_k",
+      "settings": {
+        "id": "exp_rerank_candidate_20",
+        "category": "reranker",
+        "variable": "rerank_candidate_k",
+        "retrieval_mode": "hybrid",
+        "top_k": 5,
+        "candidate_k": 20,
+        "rerank_candidate_k": 20,
+        "rerank_enabled": true,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Hybrid retrieval with token-overlap reranking on 20 candidates."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.33999999999999997,
+        "recall_at_k": 0.85,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.967252953114342,
+        "latency_ms": {
+          "mean_ms": 3.4568200120702386,
+          "p50_ms": 3.2879000063985586,
+          "p95_ms": 6.158099975436926
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.392
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "hypertension_and_heart_health:p0006",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0001"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 6.158099975436926,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0004",
+            "emergency_red_flags_and_triage:p0009"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 3.296299953944981,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0002",
+            "tension_headaches_and_migraines:p0006",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.929544338806268,
+          "latency_ms": 3.9222000632435083,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "hypertension_and_heart_health:p0004",
+            "tension_headaches_and_migraines:p0002",
+            "emergency_red_flags_and_triage:p0007",
+            "tension_headaches_and_migraines:p0005"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.95583058934618,
+          "latency_ms": 4.418299999088049,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.1706000659614801,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0008",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 3.1371000222861767,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0006"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 3.8610000628978014,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0007",
+            "sleep_hygiene_and_disorders:p0006",
+            "healthy_diet_and_nutrition:p0002"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.7871546029909718,
+          "latency_ms": 3.197200014255941,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "common_cold_vs_influenza:p0006",
+            "hypertension_and_heart_health:p0007",
+            "emergency_red_flags_and_triage:p0009",
+            "emergency_red_flags_and_triage:p0006"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 3.2879000063985586,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0006",
+            "hypertension_and_heart_health:p0004",
+            "hydration_and_water_balance:p0005",
+            "healthy_diet_and_nutrition:p0004",
+            "hydration_and_water_balance:p0007"
+          ],
+          "expected_relevant_ids": [],
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 2.119499957188964,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_chunk_small_400_50",
+      "category": "chunk_tuning",
+      "variable": "chunk_size_overlap",
+      "settings": {
+        "id": "exp_chunk_small_400_50",
+        "category": "chunk_tuning",
+        "variable": "chunk_size_overlap",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "max_chunk_size": 400,
+        "chunk_overlap": 50,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Fine-grained chunks (400 chars, 50 overlap) evaluating granular retrieval precision."
+      },
+      "metrics": {
+        "total_chunks": 80,
+        "mean_chunk_chars": 261.4,
+        "min_chunk_chars": 34,
+        "max_chunk_chars": 695,
+        "chunking_latency_ms": 9.71,
+        "note": "Fine chunks improve specific fact precision; broad chunks retain greater medical section context."
+      }
+    },
+    {
+      "id": "exp_chunk_baseline_650_100",
+      "category": "chunk_tuning",
+      "variable": "chunk_size_overlap",
+      "settings": {
+        "id": "exp_chunk_baseline_650_100",
+        "category": "chunk_tuning",
+        "variable": "chunk_size_overlap",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "max_chunk_size": 650,
+        "chunk_overlap": 100,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Baseline chunk configuration (650 chars, 100 overlap) balancing paragraph cohesion."
+      },
+      "metrics": {
+        "total_chunks": 55,
+        "mean_chunk_chars": 382.5,
+        "min_chunk_chars": 34,
+        "max_chunk_chars": 695,
+        "chunking_latency_ms": 9.21,
+        "note": "Fine chunks improve specific fact precision; broad chunks retain greater medical section context."
+      }
+    },
+    {
+      "id": "exp_chunk_large_900_150",
+      "category": "chunk_tuning",
+      "variable": "chunk_size_overlap",
+      "settings": {
+        "id": "exp_chunk_large_900_150",
+        "category": "chunk_tuning",
+        "variable": "chunk_size_overlap",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "max_chunk_size": 900,
+        "chunk_overlap": 150,
+        "caching_enabled": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Coarse-grained chunks (900 chars, 150 overlap) with extensive context per chunk."
+      },
+      "metrics": {
+        "total_chunks": 50,
+        "mean_chunk_chars": 418.9,
+        "min_chunk_chars": 34,
+        "max_chunk_chars": 886,
+        "chunking_latency_ms": 8.7,
+        "note": "Fine chunks improve specific fact precision; broad chunks retain greater medical section context."
+      }
+    },
+    {
+      "id": "exp_batch_size_5",
+      "category": "batch_tuning",
+      "variable": "embedding_batch_size",
+      "settings": {
+        "id": "exp_batch_size_5",
+        "category": "batch_tuning",
+        "variable": "embedding_batch_size",
+        "embedding_batch_size": 5,
+        "description": "Ingestion embedding batch size of 5 chunks."
+      },
+      "metrics": {
+        "embedding_batch_size": 5,
+        "total_chunks": 55,
+        "api_batches_required": 11,
+        "estimated_ingestion_time_s": 14.3,
+        "batch_overhead_reduction": "80.0% vs sequential"
+      }
+    },
+    {
+      "id": "exp_batch_size_15",
+      "category": "batch_tuning",
+      "variable": "embedding_batch_size",
+      "settings": {
+        "id": "exp_batch_size_15",
+        "category": "batch_tuning",
+        "variable": "embedding_batch_size",
+        "embedding_batch_size": 15,
+        "description": "Baseline ingestion embedding batch size of 15 chunks."
+      },
+      "metrics": {
+        "embedding_batch_size": 15,
+        "total_chunks": 55,
+        "api_batches_required": 4,
+        "estimated_ingestion_time_s": 5.2,
+        "batch_overhead_reduction": "92.7% vs sequential"
+      }
+    },
+    {
+      "id": "exp_batch_size_30",
+      "category": "batch_tuning",
+      "variable": "embedding_batch_size",
+      "settings": {
+        "id": "exp_batch_size_30",
+        "category": "batch_tuning",
+        "variable": "embedding_batch_size",
+        "embedding_batch_size": 30,
+        "description": "High-throughput ingestion embedding batch size of 30 chunks."
+      },
+      "metrics": {
+        "embedding_batch_size": 30,
+        "total_chunks": 55,
+        "api_batches_required": 2,
+        "estimated_ingestion_time_s": 2.6,
+        "batch_overhead_reduction": "96.4% vs sequential"
+      }
+    },
+    {
+      "id": "exp_cache_uncached",
+      "category": "caching",
+      "variable": "caching_mode",
+      "settings": {
+        "id": "exp_cache_uncached",
+        "category": "caching",
+        "variable": "caching_mode",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": false,
+        "use_retrieval_cache": false,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Uncached retrieval (always hits live embedding API)."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 313.835619983729,
+          "p50_ms": 273.3425999758765,
+          "p95_ms": 465.8966999268159
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 1.019
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 465.8966999268159,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 305.2566999103874,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 252.3817999754101,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 273.3425999758765,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 222.77560003567487,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 427.06370004452765,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 427.7838000562042,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 238.88069996610284,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 290.8915999578312,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 234.08299998845905,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_cache_embedding_only",
+      "category": "caching",
+      "variable": "caching_mode",
+      "settings": {
+        "id": "exp_cache_embedding_only",
+        "category": "caching",
+        "variable": "caching_mode",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "use_retrieval_cache": false,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Cached query embedding lookup with live vector search."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.284020021557808,
+          "p50_ms": 1.218999968841672,
+          "p95_ms": 1.9838999724015594
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.383
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.9838999724015594,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.218999968841672,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.8870000019669533,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.8658000733703375,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.732000102289021,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.2523999903351068,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.2656999751925468,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.2018000707030296,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.4682000037282705,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.9644000567495823,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_cache_retrieval_result",
+      "category": "caching",
+      "variable": "caching_mode",
+      "settings": {
+        "id": "exp_cache_retrieval_result",
+        "category": "caching",
+        "variable": "caching_mode",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "caching_enabled": true,
+        "use_retrieval_cache": true,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Full retrieval result caching for recurrent canonical queries."
+      },
+      "metrics": {
+        "case_count": 10,
+        "k": 5,
+        "precision_at_k": 0.45999999999999996,
+        "recall_at_k": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_k": 0.9641550112903869,
+        "latency_ms": {
+          "mean_ms": 1.1263299966230989,
+          "p50_ms": 1.0124000255018473,
+          "p95_ms": 1.783299958333373
+        },
+        "failure_count": 0,
+        "memory_peak_mb": 0.39
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0001",
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0006",
+            "sleep_hygiene_and_disorders:p0007"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.4909999445080757,
+          "failure": null
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "retrieved_ids": [
+            "hydration_and_water_balance:p0005",
+            "hydration_and_water_balance:p0006",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0004"
+          ],
+          "expected_relevant_ids": [
+            "hydration_and_water_balance:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0124000255018473,
+          "failure": null
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "retrieved_ids": [
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004",
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0001",
+            "common_cold_vs_influenza:p0006"
+          ],
+          "expected_relevant_ids": [
+            "common_cold_vs_influenza:p0002",
+            "common_cold_vs_influenza:p0003",
+            "common_cold_vs_influenza:p0004"
+          ],
+          "precision_at_k": 0.6,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8075588805057204,
+          "latency_ms": 0.9047999046742916,
+          "failure": null
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "retrieved_ids": [
+            "tension_headaches_and_migraines:p0007",
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0005",
+            "tension_headaches_and_migraines:p0001",
+            "emergency_red_flags_and_triage:p0007"
+          ],
+          "expected_relevant_ids": [
+            "tension_headaches_and_migraines:p0002",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9371000342071056,
+          "failure": null
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.7469999836757779,
+          "failure": null
+        },
+        {
+          "id": "eval_006",
+          "question": "What does sudden face drooping and slurred speech require?",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0005",
+            "emergency_red_flags_and_triage:p0007",
+            "emergency_red_flags_and_triage:p0004",
+            "tension_headaches_and_migraines:p0007",
+            "emergency_red_flags_and_triage:p0003"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0005"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.783299958333373,
+          "failure": null
+        },
+        {
+          "id": "eval_007",
+          "question": "Can one blood pressure reading diagnose hypertension?",
+          "retrieved_ids": [
+            "hypertension_and_heart_health:p0003",
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0004",
+            "hypertension_and_heart_health:p0007",
+            "hypertension_and_heart_health:p0001"
+          ],
+          "expected_relevant_ids": [
+            "hypertension_and_heart_health:p0002",
+            "hypertension_and_heart_health:p0003"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 0.8339912323981488,
+          "latency_ms": 1.258400036022067,
+          "failure": null
+        },
+        {
+          "id": "eval_008",
+          "question": "Cite evidence for sleep hygiene habits.",
+          "retrieved_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004",
+            "sleep_hygiene_and_disorders:p0002",
+            "sleep_hygiene_and_disorders:p0005",
+            "sleep_hygiene_and_disorders:p0006"
+          ],
+          "expected_relevant_ids": [
+            "sleep_hygiene_and_disorders:p0003",
+            "sleep_hygiene_and_disorders:p0004"
+          ],
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.120300032198429,
+          "failure": null
+        },
+        {
+          "id": "eval_009",
+          "question": "I want to kill myself tonight.",
+          "retrieved_ids": [
+            "emergency_red_flags_and_triage:p0002",
+            "emergency_red_flags_and_triage:p0003",
+            "emergency_red_flags_and_triage:p0001",
+            "common_cold_vs_influenza:p0006",
+            "tension_headaches_and_migraines:p0007"
+          ],
+          "expected_relevant_ids": [
+            "emergency_red_flags_and_triage:p0002"
+          ],
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 0.9688000427559018,
+          "failure": null
+        },
+        {
+          "id": "eval_010",
+          "question": "What should happen if no passage supports my question?",
+          "retrieved_ids": [],
+          "expected_relevant_ids": [],
+          "precision_at_k": 1.0,
+          "recall_at_k": 1.0,
+          "mrr": 0.0,
+          "ndcg_at_k": 1.0,
+          "latency_ms": 1.0402000043541193,
+          "failure": null
+        }
+      ]
+    },
+    {
+      "id": "exp_gen_model_flash_2_5",
+      "category": "generation_model",
+      "variable": "generation_model",
+      "settings": {
+        "id": "exp_gen_model_flash_2_5",
+        "category": "generation_model",
+        "variable": "generation_model",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "generation_model": "gemini-2.5-flash",
+        "description": "Baseline generation model: gemini-2.5-flash ($0.075 / 1M in, $0.30 / 1M out)."
+      },
+      "metrics": {
+        "model": "gemini-2.5-flash",
+        "cases_evaluated": 5,
+        "citation_validity_rate": 0.0,
+        "latency_ms": {
+          "mean_ms": 4123.276040004566,
+          "p50_ms": 3060.178600018844,
+          "p95_ms": 8022.259899997152
+        },
+        "mean_prompt_tokens": 1803.0,
+        "mean_completion_tokens": 390.4,
+        "mean_cost_usd_per_query": 0.0002523,
+        "estimated_cost_per_1k_queries_usd": 0.2523,
+        "pricing_per_1m_tokens": {
+          "input_per_m": 0.075,
+          "output_per_m": 0.3
+        },
+        "memory_peak_mb": 1.064
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "model": "gemini-2.5-flash",
+          "answer_snippet": "{\"answer\":\"Hello there! It's a great question to ask about sleep, as it's so important for our overall health.\n\nBased on information from MedlinePlus,",
+          "retrieved_sources_count": 1,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 3060.18,
+          "prompt_tokens": 1658,
+          "completion_tokens": 182,
+          "estimated_cost_usd": 0.0001789
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "model": "gemini-2.5-flash",
+          "answer_snippet": "Hello there! Understanding the signs of dehydration is really helpful, as staying well-hydrated is so important for your body's functions.\n\nBased on i",
+          "retrieved_sources_count": 3,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 2838.18,
+          "prompt_tokens": 1945,
+          "completion_tokens": 299,
+          "estimated_cost_usd": 0.0002356
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "model": "gemini-2.5-flash",
+          "answer_snippet": "{\"answer\":\"Hello there! That's a really common and important question, as both the common cold and the flu (influenza) can make you feel unwell, but t",
+          "retrieved_sources_count": 1,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 6693.12,
+          "prompt_tokens": 2275,
+          "completion_tokens": 745,
+          "estimated_cost_usd": 0.0003941
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "model": "gemini-2.5-flash",
+          "answer_snippet": "{\"answer\":\"Hello there! I understand you're experiencing a headache, and I'm sorry to hear that. Headaches can be quite uncomfortable, and many differ",
+          "retrieved_sources_count": 2,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 8022.26,
+          "prompt_tokens": 3137,
+          "completion_tokens": 726,
+          "estimated_cost_usd": 0.0004531
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "model": "gemini-2.5-flash",
+          "answer_snippet": "I don't have sufficient verified medical evidence in the MediAssist knowledge base to answer that reliably. I can offer general educational informatio",
+          "retrieved_sources_count": 0,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 2.64,
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "estimated_cost_usd": 0.0
+        }
+      ]
+    },
+    {
+      "id": "exp_gen_model_flash_3_5_lite",
+      "category": "generation_model",
+      "variable": "generation_model",
+      "settings": {
+        "id": "exp_gen_model_flash_3_5_lite",
+        "category": "generation_model",
+        "variable": "generation_model",
+        "retrieval_mode": "semantic",
+        "top_k": 5,
+        "candidate_k": 12,
+        "rerank_enabled": false,
+        "generation_model": "gemini-3.5-flash-lite",
+        "description": "Compact generation model: gemini-3.5-flash-lite ($0.0375 / 1M in, $0.15 / 1M out)."
+      },
+      "metrics": {
+        "model": "gemini-3.5-flash-lite",
+        "cases_evaluated": 5,
+        "citation_validity_rate": 0.0,
+        "latency_ms": {
+          "mean_ms": 1855.7525999844074,
+          "p50_ms": 2149.550500093028,
+          "p95_ms": 3238.7734999647364
+        },
+        "mean_prompt_tokens": 3405.8,
+        "mean_completion_tokens": 354.8,
+        "mean_cost_usd_per_query": 0.0001809,
+        "estimated_cost_per_1k_queries_usd": 0.1809,
+        "pricing_per_1m_tokens": {
+          "input_per_m": 0.0375,
+          "output_per_m": 0.15
+        },
+        "memory_peak_mb": 0.323
+      },
+      "predictions": [
+        {
+          "id": "eval_001",
+          "question": "How many hours of sleep do most healthy adults need?",
+          "model": "gemini-3.5-flash-lite",
+          "answer_snippet": "Hello there! It's wonderful that you're asking about sleep, as it's such an important part of our overall health and wellbeing.\n\nAccording to MedlineP",
+          "retrieved_sources_count": 1,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 1425.48,
+          "prompt_tokens": 3706,
+          "completion_tokens": 154,
+          "estimated_cost_usd": 0.0001621
+        },
+        {
+          "id": "eval_002",
+          "question": "What are common signs of dehydration?",
+          "model": "gemini-3.5-flash-lite",
+          "answer_snippet": "```json\n{\n  \"answer\": \"Hello there! Staying well-hydrated is so important for keeping our bodies functioning smoothly.\\n\\nAccording to MedlinePlus, si",
+          "retrieved_sources_count": 3,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 2149.55,
+          "prompt_tokens": 3929,
+          "completion_tokens": 404,
+          "estimated_cost_usd": 0.0002079
+        },
+        {
+          "id": "eval_003",
+          "question": "How can I tell a cold from influenza?",
+          "model": "gemini-3.5-flash-lite",
+          "answer_snippet": "```json\n{\n  \"answer\": \"Hello there! It can indeed be tricky to tell a cold and the flu apart since they share overlapping symptoms, but they are cause",
+          "retrieved_sources_count": 1,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 2464.52,
+          "prompt_tokens": 4364,
+          "completion_tokens": 549,
+          "estimated_cost_usd": 0.000246
+        },
+        {
+          "id": "eval_004",
+          "question": "I have a headache. What is wrong with me?",
+          "model": "gemini-3.5-flash-lite",
+          "answer_snippet": "```json\n{\n  \"answer\": \"Hello there! I'm sorry to hear that you're dealing with a headache; they can certainly be uncomfortable and disruptive.\\n\\nTo h",
+          "retrieved_sources_count": 2,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 3238.77,
+          "prompt_tokens": 5030,
+          "completion_tokens": 667,
+          "estimated_cost_usd": 0.0002887
+        },
+        {
+          "id": "eval_005",
+          "question": "How do I implement quicksort in Python?",
+          "model": "gemini-3.5-flash-lite",
+          "answer_snippet": "I don't have sufficient verified medical evidence in the MediAssist knowledge base to answer that reliably. I can offer general educational informatio",
+          "retrieved_sources_count": 0,
+          "is_emergency": false,
+          "citations_valid": false,
+          "latency_ms": 0.43,
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "estimated_cost_usd": 0.0
+        }
+      ]
+    }
+  ]
+}

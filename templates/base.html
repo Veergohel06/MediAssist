@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MediAssist – Clinical AI Health Education, Medical Terminology Translation & Verified Evidence Retrieval." />
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <title>{% block title %}MediAssist – Evidence-Based Health Assistant{% endblock %}</title>
+
+  <!-- Prevent Theme Flash -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('mediassist_theme');
+        const theme = (saved === 'dark' || saved === 'light') ? saved : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core & Design System Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}" />
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" role="banner">
+    <div class="navbar__container">
+      <a href="{{ url_for('core.index') }}" class="navbar__brand" aria-label="MediAssist Home">
+        <div class="navbar__logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="navbar__title">MediAssist</h1>
+          <p class="navbar__subtitle">Evidence-Based Health Assistant</p>
+        </div>
+      </a>
+
+      {% if not current_user.is_authenticated %}
+      <!-- Center Navigation Links (Public only) -->
+      <nav class="navbar__nav" aria-label="Main Navigation">
+        <ul class="navbar__links">
+          <li><a href="{{ url_for('core.index') }}#hero" class="navbar__link">Home</a></li>
+          <li><a href="{{ url_for('core.index') }}#features" class="navbar__link">Features</a></li>
+          <li><a href="{{ url_for('core.index') }}#how-it-works" class="navbar__link">How It Works</a></li>
+          <li><a href="{{ url_for('core.index') }}#safety" class="navbar__link">Safety & Trust</a></li>
+          <li><a href="{{ url_for('core.index') }}#contact" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+      {% endif %}
+
+      <!-- Right Navigation Actions & Theme Toggle -->
+      <div class="navbar__actions">
+        <!-- Light / Dark Mode Toggle -->
+        <button type="button" class="theme-toggle-btn" id="globalThemeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        {% if current_user.is_authenticated %}
+          <!-- Compact Authenticated Actions: Consultation & User Profile Menu -->
+          <a href="{{ url_for('chat.chat_view') }}" class="btn btn-primary btn-sm" id="navConsultationBtn" style="height: 38px; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Consultation</span>
+          </a>
+
+          <!-- Compact User Profile Menu -->
+          <div class="nav-profile-container" id="baseNavProfileContainer">
+            <button type="button" class="nav-profile-trigger" id="baseNavProfileTrigger" aria-expanded="false" aria-haspopup="true" title="Account menu ({{ current_user.email }})">
+              <span class="nav-profile-avatar">{{ current_user.name[:1]|upper if current_user.name else 'U' }}</span>
+              <span class="nav-profile-name">{{ current_user.name }}</span>
+              <svg class="nav-profile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-profile-dropdown" id="baseNavProfileDropdown">
+              <div class="nav-profile-header">
+                <div class="nav-profile-user-name">{{ current_user.name }}</div>
+                <div class="nav-profile-user-email">{{ current_user.email }}</div>
+              </div>
+              <div class="nav-profile-divider"></div>
+              <form action="{{ url_for('auth.logout') }}" method="POST" style="margin: 0; width: 100%;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="nav-profile-item nav-profile-logout" id="navLogoutBtn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  <span>Sign Out</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ url_for('auth.login') }}" class="btn btn-secondary btn-sm" id="navLoginBtn">
+            Sign In
+          </a>
+          <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-sm" id="navRegisterBtn">
+            Get Started
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <!-- Flash Alerts -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="alerts-container">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category if category not in ('error', 'danger') else 'danger' }}" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="alert-close-btn" onclick="this.parentElement.remove()" aria-label="Dismiss alert">&times;</button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Main Content Block -->
+  <main id="mainContent">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div>
+        <a href="{{ url_for('core.index') }}" class="footer-brand">
+          <div class="navbar__logo-icon" style="width: 32px; height: 32px;" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </div>
+          <span style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-main);">MediAssist</span>
+        </a>
+        <p class="footer-desc">
+          Evidence-grounded medical AI assistant for healthcare education, clinical terminology translation, and verified evidence retrieval.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('core.index') }}#features" class="footer-link">Clinical Features</a></li>
+          <li><a href="{{ url_for('core.index') }}#how-it-works" class="footer-link">How It Works</a></li>
+          {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('chat.chat_view') }}" class="footer-link">AI Consultation</a></li>
+          {% else %}
+            <li><a href="{{ url_for('auth.login') }}" class="footer-link">Sign In</a></li>
+            <li><a href="{{ url_for('auth.register') }}" class="footer-link">Create Account</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Safety & Governance</h4>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('core.index') }}#safety" class="footer-link">Clinical Guardrails</a></li>
+          <li><a href="{{ url_for('core.index') }}#disclaimer" class="footer-link">Medical Disclaimer</a></li>
+          <li><span class="footer-link" style="cursor: default;">Evidence Grounding: 100%</span></li>
+          <li><span class="footer-link" style="cursor: default;">Multi-Tenant Isolation</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Emergency Notice</h4>
+        <p style="font-size: 0.825rem; line-height: 1.6; color: var(--color-warning-text); background: var(--color-warning-light); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--color-warning-border);">
+          MediAssist is an educational tool, not a diagnostic device. In an acute emergency, call your emergency services (911, 112, 999) immediately.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 MediAssist AI Platform. All rights reserved. Built for evidence-based clinical education.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <span>Privacy-First Architecture</span>
+        <span>Deterministic Triage</span>
+        <span>Verified Citations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Scripts -->
+  <script>
+    // Theme Toggle Handler
+    (function () {
+      const toggleBtn = document.getElementById('globalThemeToggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          const current = document.documentElement.getAttribute('data-theme') || 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('mediassist_theme', next);
+          } catch (_) {}
+        });
+      }
+
+      // Compact Profile Dropdown Toggle
+      const trigger = document.getElementById('baseNavProfileTrigger');
+      const dropdown = document.getElementById('baseNavProfileDropdown');
+      if (trigger && dropdown) {
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const isOpen = dropdown.classList.contains('show');
+          if (isOpen) {
+            dropdown.classList.remove('show');
+            trigger.setAttribute('aria-expanded', 'false');
+          } else {
+            dropdown.classList.add('show');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target) && !trigger.contains(e.target)) {
+            dropdown.classList.remove('show');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>
